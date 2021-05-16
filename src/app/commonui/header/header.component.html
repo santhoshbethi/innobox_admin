@@ -1,0 +1,208 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark fixed-top wow fadeInDown"
+  id="mainNav"
+>
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="index.html">
+      <img
+        src="../../../assets/img/innoboxlogo.svg"
+        alt="innobox logo"
+        class="gbitlogo"
+      />
+    </a>
+    <button
+      class="navbar-toggler navbar-toggler-right"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <div class="container-hamburg" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <!--  -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle pointer"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >SERVICES</a
+          >
+          <!-- id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dropdown  dropdown-toggle  onclick="window.open('services.html')" onclick="service_page()" -->
+          <div
+            class="dropdown-menu mega-menu-service-bg-container"
+            id="dropdown-menu-id"
+            aria-labelledby="navbarDropdown"
+          >
+            <div class="container">
+              <!--<div class="row"><div class="up-arrow"></div></div>-->
+              <div class="row">
+                <div
+                  class="
+                    col-md-4
+                    mega-menu-service-bg-container-two-col
+                    row-padding
+                    margin-bottom-mega-menu
+                  "
+                >
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link mega-menu-service-h3"
+                        href="services.html"
+                        >All Services
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="network-stack.html"
+                        >Network Stack</a
+                      >
+                    </li>
+                    <!-- <li class="nav-item">
+                                       <a class="nav-link" href="wireless-networking.html">Wireless Networking</a>
+                                   </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="5g-solutions.html"
+                        >5G Solutions</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="connectivity.html"
+                        >Connectivity (Networking)</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="linux-and-android.html"
+                        >Linux and Android</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="testing-automation.html"
+                        >Testing Automation</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="wireless-technology.html"
+                        >Wireless Technologies</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="
+                    col-md-4
+                    mega-menu-service-bg-container-two-col
+                    row-padding
+                    margin-bottom-mega-menu
+                  "
+                >
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="wifi6-solutions.html"
+                        >Wi-Fi 6 (802.11ax) Solutions</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="cloud&desktop-applications.html"
+                        >Cloud & Desktop Applications</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="iot.html">IOT</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="artificial-intelligence.html"
+                        >Artificial Intelligence</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="certification.html"
+                        >Certification</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mobility.html">Mobility</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mobile-applications.html"
+                        >mobile Applications</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  class="col-md-4 mega-menu-service-bg margin-bottom-mega-menu"
+                >
+                  <!-- <h3 class="mega-menu-service-h3">Services</h3>-->
+                  <a href="about.html">
+                    <img
+                      src="../../../assets/img/innobox-innovation.svg"
+                      alt=""
+                      class="img-fluid menu_image_padding"
+                    />
+                  </a>
+                  <p class="menu_image_p">
+                    We design, develop and deliver innovative digital products
+                    that transform businesses and customer experiences!
+                  </p>
+                  <p class="mega-menu-know-more">
+                    <a href="about.html" class="mega-menu-creative-alearnmore"
+                      >Know More</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="success-stories.html">Recent Works</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="{{ appConfig.routes.whyus }}"
+            >Why Us?</a
+          >
+        </li>
+        <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>-->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="{{ appConfig.routes.career }}"
+            >Careers</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="{{ appConfig.routes.contactus }}"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+      <!--  -->
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+// Main index file where all custom scss files are imported
+
+@import "./media";
+@import "./util";
+@import "./variables";
+@import "./main/main";
+
+// wrapper for page
+#wrapper {
+  min-height: calc(100vh - 152px);
+}
