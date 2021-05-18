@@ -28,11 +28,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <!--  -->
-      <ul class="navbar-nav ml-auto">
+      <ul class="ml-auto navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
-        <li class="nav-item nav-item dropdown">
+        <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle pointer"
             id="navbarDropdown"
@@ -63,40 +63,49 @@
                     <li class="nav-item">
                       <a
                         class="nav-link mega-menu-service-h3"
-                        href="services.html"
+                        routerLink="{{ appConfig.routes.mainservice }}"
                         >All Services
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="network-stack.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.networkstack }}"
                         >Network Stack</a
                       >
                     </li>
-                    <!-- <li class="nav-item">
-                                       <a class="nav-link" href="wireless-networking.html">Wireless Networking</a>
-                                   </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="5g-solutions.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.fivegsolution }}"
                         >5G Solutions</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="connectivity.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.connectivity }}"
                         >Connectivity (Networking)</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="linux-and-android.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.linuxandroid }}"
                         >Linux and Android</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="testing-automation.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.testingautomation }}"
                         >Testing Automation</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="wireless-technology.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.wirelesstechnology }}"
                         >Wireless Technologies</a
                       >
                     </li>
@@ -113,33 +122,49 @@
                 >
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link" href="wifi6-solutions.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.wifisolution }}"
                         >Wi-Fi 6 (802.11ax) Solutions</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="cloud&desktop-applications.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.clouddesktop }}"
                         >Cloud & Desktop Applications</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="iot.html">IOT</a>
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.iot }}"
+                        >IOT</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="artificial-intelligence.html"
+                      <a class="nav-link" routerLink="{{ appConfig.routes.ai }}"
                         >Artificial Intelligence</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="certification.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.certification }}"
                         >Certification</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="mobility.html">Mobility</a>
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.mobility }}"
+                        >Mobility</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="mobile-applications.html"
+                      <a
+                        class="nav-link"
+                        routerLink="{{ appConfig.routes.mobileapplication }}"
                         >mobile Applications</a
                       >
                     </li>
@@ -172,19 +197,18 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="success-stories.html">Recent Works</a>
+          <a class="nav-link" routerLink="{{ appConfig.routes.recentworks }}"
+            >Recent Works</a
+          >
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active"
             routerLink="{{ appConfig.routes.whyus }}"
             >Why Us?</a
           >
-        </li>
-        <!--<li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>-->
+        </li> -->
         <li class="nav-item">
           <a
             class="nav-link"

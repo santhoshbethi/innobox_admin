@@ -14500,7 +14500,7 @@ a.internal-headersecp1a {
 
 .whyinnoboxdiv2 {
   margin-right: 50px;
-  min-height: 400px;
+  // min-height: 400px;
   background: transparent;
   margin-bottom: 50px;
 }
@@ -16449,4 +16449,14 @@ ul.whyus-tabs li.active a {
 }
 .carousel-control-next-icon {
   background-image: url("../../img/right-arrow.png") !important;
+}
+.btn:focus,
+.btn.focus {
+  box-shadow: none !important;
+}
+.btn-link:hover {
+  text-decoration: none !important;
+}
+a {
+  text-decoration: none !important;
 }

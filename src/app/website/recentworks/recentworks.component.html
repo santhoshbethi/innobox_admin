@@ -1,1 +1,432 @@
-<p>recentworks works!</p>
+<!--  --><!-- internalheader-start -->
+<section class="internal-headersec wow fadeInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="internal-headersech2">Latest Works</h2>
+        <p class="internal-headersecp">
+          We create innovative digital products that impact the way people
+          experience the world.
+        </p>
+        <p class="internal-headersecp1">
+          <a
+            href="#"
+            class="internal-headersecp1a"
+            data-toggle="modal"
+            data-target="#myModalsevices"
+            >Ask for a Quote</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- internalheader-end -->
+<!-- service - details - start -->
+<section class="servicedetails-sec wow fadeInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="servicedetails-p">
+          <span>Innobox</span> brings years of experience and loads of passion
+          into developing each product to deliver business intelligence at the
+          touch of a button! .
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- service - details - end -->
+<section class="innobox-recentsec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="innobox-recentsec-h2">Recent Works</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="filter text-center">
+          <button
+            (click)="changeType('type1')"
+            id="type1"
+            data-name="*"
+            class="btn btn-link recentfilter-but active"
+          >
+            All
+          </button>
+          <button
+            (click)="changeType('type2')"
+            id="type2"
+            data-name=".Networking"
+            class="btn btn-link recentfilter-but"
+          >
+            Connectivity (Networking)
+          </button>
+          <button
+            (click)="changeType('type3')"
+            id="type3"
+            data-name=".Automation"
+            class="btn btn-link recentfilter-but"
+          >
+            Testing Automation
+          </button>
+          <button
+            (click)="changeType('type4')"
+            id="type4"
+            data-name=".Artificial"
+            class="btn btn-link recentfilter-but"
+          >
+            Artificial Intelligence
+          </button>
+          <button
+            (click)="changeType('type5')"
+            id="type5"
+            data-name=".Wireless"
+            class="btn btn-link recentfilter-but"
+          >
+            Wireless Technology
+          </button>
+          <button
+            (click)="changeType('type6')"
+            id="type6"
+            data-name=".Certification"
+            class="btn btn-link recentfilter-but"
+          >
+            Certification
+          </button>
+          <button
+            (click)="changeType('type7')"
+            id="type7"
+            data-name=".Linux"
+            class="btn btn-link recentfilter-but"
+          >
+            Linux and Android
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="grid row">
+          <div
+            class="grid-item col-md-4 Networking Wireless Linux wow fadeInLeft"
+          >
+            <a
+              class="portfoliodetail-a"
+              routerLink="/{{ appConfig.routes.gryphion }}"
+            >
+              <div class="recentboxdiv">
+                <!--<span class="recentboxdiv-span">WIFI</span>-->
+                <h3 class="recentboxdiv-h3">
+                  Secure and Intelligent Home Router
+                </h3>
+                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
+                <img
+                  src="../../../assets/img/gryphon3.jpg"
+                  class="recentboxdivimg"
+                />
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="
+              grid-item
+              col-md-8
+              wow
+              Networking
+              Automation
+              Wireless
+              Certification
+              fadeInRight
+            "
+          >
+            <a
+              class="portfoliodetail-a"
+              routerLink="/{{ appConfig.routes.fiveg }}"
+            >
+              <div class="recentboxdiv recentboxdiv1">
+                <img
+                  src="../../../assets/img/5g3.jpg"
+                  class="recentboxdivimg recentboxdivimg1"
+                /><br />
+                <!--<span class="recentboxdiv-span">AI</span>-->
+                <h3 class="recentboxdiv-h3">5G Home Gateway</h3>
+                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
+              </div>
+            </a>
+          </div>
+
+          <div class="grid-item col-md-8 Automation wow fadeInLeft">
+            <a
+              class="portfoliodetail-a"
+              routerLink="/{{ appConfig.routes.lab }}"
+            >
+              <div class="recentboxdiv recentboxdiv">
+                <img
+                  src="../../../assets/img/lab3.jpg"
+                  class="recentboxdivimg recentboxdivimg1"
+                /><br />
+                <!--<span class="recentboxdiv-span">Security</span>-->
+                <h3 class="recentboxdiv-h3">Robotic Process Automation</h3>
+                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
+              </div>
+            </a>
+          </div>
+
+          <div class="grid-item col-md-4 Intelligence wow fadeInRight">
+            <a
+              class="portfoliodetail-a"
+              routerLink="/{{ appConfig.routes.greyn }}"
+            >
+              <div class="recentboxdiv">
+                <!--<span class="recentboxdiv-span">Security</span>-->
+                <h3 class="recentboxdiv-h3">
+                  Video Traffic Analytics with Computer Vision
+                </h3>
+                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
+                <img
+                  src="../../../assets/img/greyn4.jpg"
+                  class="recentboxdivimg"
+                />
+              </div>
+            </a>
+          </div>
+          <!--  -->
+
+          <!-- </div> -->
+
+          <div class="grid-item col-md-12 Automation wow fadeInLeft">
+            <a
+              class="portfoliodetail-a"
+              routerLink="/{{ appConfig.routes.mobileapps }}"
+            >
+              <div class="recentboxdiv recentboxdiv">
+                <img
+                  src="../../../assets/img/1100-1-mobile.jpg"
+                  class="recentboxdivimg recentboxdivimg1"
+                /><br />
+                <!--<span class="recentboxdiv-span">Security</span>-->
+                <h3 class="recentboxdiv-h3">Mobile Apps</h3>
+                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="experience-sec wow fadeInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="experience-h2">Have you tried innobox?</h2>
+        <p class="experience-p">
+          Great things come in small packages. Innobox delivers excellence using
+          5G-enables Smart Technology. Come, explore the world of Wireless Smart
+          Devices with Innobox, the right partner for your Tech Transformation,
+          Business Intelligence and Delivery Excellence
+        </p>
+        <p class="experience-p1">
+          <a href="#" class="" data-toggle="modal" data-target="#myModalsevices"
+            >Get In Touch</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<app-commonsection></app-commonsection>
+<!-- The Modal -->
+<div class="modal" id="myModalsevices">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header
+             <div class="modal-header">
+             <h4 class="modal-title"></h4>
+
+             </div>
+             -->
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <div
+              class="
+                innobox-contactfrmcontainer innobox-contactfrmcontainer-right
+              "
+            >
+              <form
+                class="form-contact innoboxcontact-form addcountry6"
+                id="innoboxcontact-form-services"
+              >
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="name-services">NAME</label>
+                    <input
+                      class="form-control"
+                      name="name"
+                      id="name-services"
+                      type="text"
+                    />
+                    <input
+                      name="latestworks"
+                      type="hidden"
+                      value="Latest Works-Ask for Quote"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email-services">E-MAIL</label>
+                    <input
+                      class="form-control"
+                      name="email"
+                      id="email-services"
+                      type="email"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="company-services">COMPANY</label>
+                    <input
+                      class="form-control"
+                      name="company"
+                      id="company-services"
+                      type="text"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="mobilenumber-services">PHONE NUMBER</label>
+                    <input
+                      class="form-control"
+                      name="mobilenumber"
+                      id="mobilenumber-services"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="messageabout-services"
+                      >What is your message about</label
+                    >
+                    <select
+                      class="form-control"
+                      id="messageabout-services"
+                      name="job2"
+                    >
+                      <option value="0">Select</option>
+                      <option>Sales</option>
+                      <option>Support</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="message-services">Message</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="5"
+                      id="message-services"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-warning innoboxsubmit">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer
+             <div class="modal-footer">
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+             </div>
+             -->
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal formsucess_modalsucess" id="formsucess">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 130.2 130.2"
+            >
+              <circle
+                class="path circle"
+                fill="none"
+                stroke="#73AF55"
+                stroke-width="6"
+                stroke-miterlimit="10"
+                cx="65.1"
+                cy="65.1"
+                r="62.1"
+              />
+              <polyline
+                class="path check"
+                fill="none"
+                stroke="#73AF55"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                points="100.2,40.2 51.5,88.8 29.8,67.5 "
+              />
+            </svg>
+            <p>
+              Thank you!<br />
+              We received your information. Our expert team will get back to you
+              soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="formfailure">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <p>
+              Sorry!<br />
+              Something went wrong
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
