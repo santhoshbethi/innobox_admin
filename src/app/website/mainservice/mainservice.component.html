@@ -45,10 +45,6 @@
     </div>
 
     <div class="row p-10">
-      <!-- <div class="col-md-7 Connectivity-Networking-img wow fadeInRight serviformobile">
-
-                            </div> -->
-
       <div
         class="
           col-md-7
@@ -74,7 +70,9 @@
             and secure-remote management.
           </p>
           <p class="know-more">
-            <a href="network-stack.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.networkstack }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -101,7 +99,9 @@
             and Homes can now benefit from 5G
           </p>
           <p class="know-more">
-            <a href="5g-solutions.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.fivegsolution }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -147,7 +147,9 @@
             and secure-remote management.
           </p>
           <p class="know-more">
-            <a href="connectivity.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.connectivity }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -174,7 +176,9 @@
             without compromising the range and throughput
           </p>
           <p class="know-more">
-            <a href="wifi6-solutions.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.wifisolution }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -210,7 +214,7 @@
           </p>
           <p class="know-more">
             <a
-              href="cloud&desktop-applications.html"
+              routerLink="/{{ appConfig.routes.clouddesktop }}"
               class="creative-alearnmore"
               >Know More</a
             >
@@ -238,7 +242,11 @@
             without compromising the range and throughput
           </p>
           <p class="know-more">
-            <a href="iot.html" class="creative-alearnmore">Know More</a>
+            <a
+              routerLink="/{{ appConfig.routes.iot }}"
+              class="creative-alearnmore"
+              >Know More</a
+            >
           </p>
         </div>
       </div>
@@ -267,7 +275,9 @@
             and applications to provide customers with diversified applications.
           </p>
           <p class="know-more">
-            <a href="linux-and-android.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.linuxandroid }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -295,7 +305,9 @@
             minimal human intervention to test complicated business logic.
           </p>
           <p class="know-more">
-            <a href="testing-automation.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.testingautomation }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -339,7 +351,9 @@
             technologies (Wi-Fi & Bluetooth).
           </p>
           <p class="know-more">
-            <a href="wireless-technology.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.wirelesstechnology }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -368,7 +382,9 @@
             domains.
           </p>
           <p class="know-more">
-            <a href="artificial-intelligence.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.ai }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -406,7 +422,9 @@
             cellular device.
           </p>
           <p class="know-more">
-            <a href="certification.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.certification }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -435,7 +453,9 @@
             development platforms in the market.
           </p>
           <p class="know-more">
-            <a href="mobile-applications.html" class="creative-alearnmore"
+            <a
+              routerLink="/{{ appConfig.routes.mobileapplication }}"
+              class="creative-alearnmore"
               >Know More</a
             >
           </p>
@@ -468,7 +488,11 @@
             compliance and improved workplace productivity.
           </p>
           <p class="know-more">
-            <a href="mobility.html" class="creative-alearnmore">Know More</a>
+            <a
+              routerLink="/{{ appConfig.routes.mobility }}"
+              class="creative-alearnmore"
+              >Know More</a
+            >
           </p>
         </div>
       </div>
@@ -480,148 +504,9 @@
   </div>
 </section>
 <!-- services-list section - end -->
-<section class="experience-sec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="experience-h2">Have you tried innobox?</h2>
-        <p class="experience-p">
-          Great things come in small packages. Innobox delivers excellence using
-          5G-enables Smart Technology. Come, explore the world of Wireless Smart
-          Devices with Innobox, the right partner for your Tech Transformation,
-          Business Intelligence and Delivery Excellence
-        </p>
-        <p class="experience-p1">
-          <a href="#" class="" data-toggle="modal" data-target="#myModalsevices"
-            >Get In Touch</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+<app-getintouch></app-getintouch>
 <app-commonsection></app-commonsection>
 <!-- The Modal -->
-<div class="modal" id="myModalsevices">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header
-             <div class="modal-header">
-             <h4 class="modal-title"></h4>
-
-             </div>
-             -->
-      <!-- Modal body -->
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <div
-              class="
-                innobox-contactfrmcontainer innobox-contactfrmcontainer-right
-              "
-            >
-              <form
-                class="form-contact innoboxcontact-form addcountry6"
-                id="innoboxcontact-form-services"
-              >
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="name-services">NAME</label>
-                    <input
-                      class="form-control"
-                      name="name"
-                      id="name-services"
-                      type="text"
-                    />
-                    <input
-                      name="latestworks"
-                      type="hidden"
-                      value="Latest Works-Ask for Quote"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email-services">E-MAIL</label>
-                    <input
-                      class="form-control"
-                      name="email"
-                      id="email-services"
-                      type="email"
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="company-services">COMPANY</label>
-                    <input
-                      class="form-control"
-                      name="company"
-                      id="company-services"
-                      type="text"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="mobilenumber-services">PHONE NUMBER</label>
-                    <input
-                      class="form-control"
-                      name="mobilenumber"
-                      id="mobilenumber-services"
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="messageabout-services"
-                      >What is your message about</label
-                    >
-                    <select
-                      class="form-control"
-                      id="messageabout-services"
-                      name="job2"
-                    >
-                      <option value="0">Select</option>
-                      <option>Sales</option>
-                      <option>Support</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="message-services">Message</label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="5"
-                      id="message-services"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-warning innoboxsubmit">
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal footer
-             <div class="modal-footer">
-             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-             </div>
-             -->
-    </div>
-  </div>
-</div>
 
 <!-- The Modal -->
 <div class="modal formsucess_modalsucess" id="formsucess">

@@ -9,8 +9,9 @@ $(document).ready(function () {
     file: [
       {
         src: {
-          main: "img/slider-img1.jpg",
-          cover: "img/slider-img1.jpg",
+          main: "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
+          cover:
+            "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
         },
         title: "Intelligent",
         desc: "Connected Devices for <br>" + "next-gen Networking ",
@@ -23,8 +24,9 @@ $(document).ready(function () {
       },
       {
         src: {
-          main: "img/gryphon-change.jpg",
-          cover: "img/gryphon-change.jpg",
+          main: "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
+          cover:
+            "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
         },
         title: "We Deliver",
         desc: "Tech that Redefines how your IT works ",
@@ -37,8 +39,9 @@ $(document).ready(function () {
       },
       {
         src: {
-          main: "img/slider-img-greyn.jpg",
-          cover: "img/slider-img-greyn.jpg",
+          main: "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
+          cover:
+            "https://www.gettyimages.in/gi-resources/images/500px/983794168.jpg",
         },
         title: "Road Traffic",
         desc: "Intelligence Delivered <br>" + "with Accuracy ",

@@ -9,3 +9,15 @@
 #wrapper {
   min-height: calc(100vh - 152px);
 }
+.cdk-overlay-pane {
+  z-index: 99999999999 !important;
+  position: relative !important;
+}
+.red-snackbar {
+  background-color: rgb(153, 50, 50);
+  color: lightgoldenrodyellow;
+}
+.green-snackbar {
+  background-color: rgb(38, 128, 53);
+  color: lightgoldenrodyellow;
+}

@@ -29,6 +29,16 @@ const appConfig = {
     mobility: 'mobility',
     mobileapplication: 'mobile-application',
     computervision: 'computer-vision',
+    successstory: 'success-stories',
+    autotestapp: 'automation-test-application',
+    securityiot: 'security-and-surveillance-iiot',
+    iniotplat: 'industrial-iot-platform',
+    latestwork: 'latest-work',
+    sihomerouter: 'secure-and-intelligent-home-router',
+    multibandfiveg: 'multiband-5g-gateway',
+    aboutus: 'about-us',
+    terms: 'terms-and-condition',
+    legal: 'legal',
   },
 };
 export default appConfig;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import appConfig from 'src/app/config/appConfig';
 
 @Component({
   selector: 'app-commonsection',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommonsectionComponent implements OnInit {
   constructor() {}
+  appConfig: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.appConfig = appConfig;
+  }
 }

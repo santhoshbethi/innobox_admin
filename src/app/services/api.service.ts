@@ -33,4 +33,16 @@ export class ApiService {
       }
     );
   }
+
+  addHomeContact(data: any) {
+    return this.http.post(`${appConfig.apiUrl}home/hmpcontactus`, data, {
+      headers: this.headers,
+    });
+  }
+
+  addContactUs(data: any) {
+    return this.http.post(`${appConfig.apiUrl}cts/sendmsg`, data, {
+      headers: this.headers,
+    });
+  }
 }

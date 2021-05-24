@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import appConfig from '../config/appConfig';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { AiComponent } from './ai/ai.component';
+import { AutomationtestappComponent } from './automationtestapp/automationtestapp.component';
 import { CareerComponent } from './career/career.component';
 import { CertificationComponent } from './certification/certification.component';
 import { ClouddesktopComponent } from './clouddesktop/clouddesktop.component';
@@ -13,15 +15,22 @@ import { FivegsolutionComponent } from './fivegsolution/fivegsolution.component'
 import { GreynComponent } from './greyn/greyn.component';
 import { GryphionComponent } from './gryphion/gryphion.component';
 import { HomeComponent } from './home/home.component';
+import { IndiotplatformComponent } from './indiotplatform/indiotplatform.component';
 import { IotComponent } from './iot/iot.component';
 import { LabComponent } from './lab/lab.component';
+import { LatestworkComponent } from './latestwork/latestwork.component';
+import { LegalComponent } from './legal/legal.component';
 import { LinuxandroidComponent } from './linuxandroid/linuxandroid.component';
 import { MainserviceComponent } from './mainservice/mainservice.component';
 import { MobileapplicationComponent } from './mobileapplication/mobileapplication.component';
 import { MobileappsComponent } from './mobileapps/mobileapps.component';
 import { MobilityComponent } from './mobility/mobility.component';
+import { MultibandgatewayComponent } from './multibandgateway/multibandgateway.component';
 import { NetworkstackComponent } from './networkstack/networkstack.component';
 import { RecentworksComponent } from './recentworks/recentworks.component';
+import { SecurityiotComponent } from './securityiot/securityiot.component';
+import { SuccessstoriesComponent } from './successstories/successstories.component';
+import { TermsComponent } from './terms/terms.component';
 import { TestingautomationComponent } from './testingautomation/testingautomation.component';
 import { WhyusComponent } from './whyus/whyus.component';
 import { WifisolutionComponent } from './wifisolution/wifisolution.component';
@@ -81,6 +90,42 @@ const routes: Routes = [
   {
     path: appConfig.routes.computervision,
     component: ComputervisionComponent,
+  },
+  {
+    path: appConfig.routes.successstory,
+    component: SuccessstoriesComponent,
+  },
+  {
+    path: appConfig.routes.autotestapp,
+    component: AutomationtestappComponent,
+  },
+  {
+    path: appConfig.routes.securityiot,
+    component: SecurityiotComponent,
+  },
+  {
+    path: appConfig.routes.iniotplat,
+    component: IndiotplatformComponent,
+  },
+  {
+    path: appConfig.routes.multibandfiveg,
+    component: MultibandgatewayComponent,
+  },
+  {
+    path: appConfig.routes.aboutus,
+    component: AboutpageComponent,
+  },
+  {
+    path: appConfig.routes.latestwork,
+    component: LatestworkComponent,
+  },
+  {
+    path: appConfig.routes.terms,
+    component: TermsComponent,
+  },
+  {
+    path: appConfig.routes.legal,
+    component: LegalComponent,
   },
 ];
 

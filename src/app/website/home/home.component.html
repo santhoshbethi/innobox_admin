@@ -28,7 +28,11 @@
           showcase consistent growth.
         </p>
         <p>
-          <a href="about.html" class="innobox-what-pa">Know More About Us</a>
+          <a
+            routerLink="/{{ appConfig.routes.aboutus }}"
+            class="innobox-what-pa"
+            >Know More About Us</a
+          >
         </p>
       </div>
       <div class="col-md-5 wow fadeInRight">
@@ -661,34 +665,58 @@
         <h2 class="innobox-homecontact-h2">contact Us</h2>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <div class="home-contactform">
           <div class="row">
             <div class="col-md-6">
-              <form class="homecontact addcountry-home">
+              <ngx-snackbar
+                [position]="'bottom-center'"
+                [max]="3"
+              ></ngx-snackbar>
+              <form
+                [formGroup]="homeForm"
+                (ngSubmit)="addData()"
+                class="homecontact addcountry-home"
+              >
                 <div class="form-group">
                   <label for="name">Your Name:</label>
                   <input
                     type="text"
                     class="form-control"
+                    formControlName="name"
                     id="name"
                     name="name"
                   />
-                  <input
-                    type="hidden"
-                    name="pagename"
-                    value="Home Page Contact Us"
-                  />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      homeForm.get('name')?.touched &&
+                      homeForm.get('name')?.errors
+                    "
+                  >
+                    Name is Required
+                  </P>
                 </div>
                 <div class="form-group">
                   <label for="email">Your Email:</label>
                   <input
                     type="email"
                     class="form-control"
+                    formControlName="email"
                     id="email"
                     name="email"
                   />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      homeForm.get('email')?.touched &&
+                      homeForm.get('email')?.errors
+                    "
+                  >
+                    Email is Required
+                  </P>
                 </div>
                 <div class="form-group">
                   <label for="comment">Enter Your Message:</label>
@@ -696,8 +724,18 @@
                     class="form-control"
                     rows="5"
                     id="comment"
+                    formControlName="message"
                     name="message"
                   ></textarea>
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      homeForm.get('message')?.touched &&
+                      homeForm.get('message')?.errors
+                    "
+                  >
+                    Message is Required
+                  </P>
                 </div>
                 <div class="text-center">
                   <button

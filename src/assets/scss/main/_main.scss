@@ -14011,35 +14011,35 @@ a.contact-seca1 {
   margin-top: 100px;
   min-height: 300px;
   padding: 80px 0;
-  background: url("../../img/connectivity-service.jpg");
+  background-image: url("../../img/connectivity-service.jpg");
 }
 
 .internal-headersec-certificate {
   margin-top: 100px;
   min-height: 300px;
   padding: 80px 0;
-  background: url("../../img/certification-service.jpg");
+  background-image: url("../../img/certification-service.jpg");
 }
 
 .internal-headersec-computer {
   margin-top: 100px;
   min-height: 300px;
   padding: 80px 0;
-  background: url("../../img/computer-service.jpg");
+  background-image: url("../../img/computer-service.jpg");
 }
 
 .internal-headersec-wireless {
   margin-top: 100px;
   min-height: 300px;
   padding: 80px 0;
-  background: url("../../img/wireless-final.jpg");
+  background-image: url("../../img/wireless-final.jpg");
 }
 
 .internal-headersec-mobile-application {
   margin-top: 100px;
   min-height: 300px;
   padding: 80px 0;
-  background: url("../../img/1349-mobile.jpg");
+  background-image: url("../../img/1349-mobile.jpg");
 }
 
 .internal-headersech2 {
@@ -16459,4 +16459,7 @@ ul.whyus-tabs li.active a {
 }
 a {
   text-decoration: none !important;
+}
+.error-class {
+  color: red;
 }
