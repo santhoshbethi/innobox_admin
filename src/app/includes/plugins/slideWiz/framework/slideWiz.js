@@ -1,7 +1,7 @@
 //Git: https://github.com/iamwizzdom/slideWiz
 
 $.fn.slideWiz = function (e) {
-  "use strict";
+  ("use strict");
   const FORWARD = 0;
   const BACKWARD = 1;
 

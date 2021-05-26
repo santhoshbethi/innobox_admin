@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { SnackbarModule } from 'ngx-snackbar';
+import { SwiperModule } from 'swiper/angular';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { AiComponent } from './ai/ai.component';
 import { AutomationtestappComponent } from './automationtestapp/automationtestapp.component';
@@ -26,6 +27,7 @@ import { IndiotplatformComponent } from './indiotplatform/indiotplatform.compone
 import { IotComponent } from './iot/iot.component';
 import { LabComponent } from './lab/lab.component';
 import { LatestworkComponent } from './latestwork/latestwork.component';
+import { LegalComponent } from './legal/legal.component';
 import { LinuxandroidComponent } from './linuxandroid/linuxandroid.component';
 import { MainserviceComponent } from './mainservice/mainservice.component';
 import { MobileapplicationComponent } from './mobileapplication/mobileapplication.component';
@@ -36,13 +38,12 @@ import { NetworkstackComponent } from './networkstack/networkstack.component';
 import { RecentworksComponent } from './recentworks/recentworks.component';
 import { SecurityiotComponent } from './securityiot/securityiot.component';
 import { SuccessstoriesComponent } from './successstories/successstories.component';
+import { TermsComponent } from './terms/terms.component';
 import { TestingautomationComponent } from './testingautomation/testingautomation.component';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { WhyusComponent } from './whyus/whyus.component';
 import { WifisolutionComponent } from './wifisolution/wifisolution.component';
 import { WirelesstechnologyComponent } from './wirelesstechnology/wirelesstechnology.component';
-import { TermsComponent } from './terms/terms.component';
-import { LegalComponent } from './legal/legal.component';
 
 @NgModule({
   declarations: [
@@ -81,8 +82,8 @@ import { LegalComponent } from './legal/legal.component';
     LatestworkComponent,
 
     MultibandgatewayComponent,
-     TermsComponent,
-     LegalComponent,
+    TermsComponent,
+    LegalComponent,
   ],
   imports: [
     CommonModule,
@@ -94,6 +95,7 @@ import { LegalComponent } from './legal/legal.component';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    SwiperModule,
   ],
   providers: [],
 })
