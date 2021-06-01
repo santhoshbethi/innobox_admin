@@ -26,6 +26,7 @@ SwiperCore.use([
   Autoplay,
   EffectFlip,
   Thumbs,
+  Autoplay,
   Controller,
 ]);
 @Component({
@@ -34,6 +35,9 @@ SwiperCore.use([
 })
 export class HomeComponent implements OnInit {
   homeForm: FormGroup;
+  categories: any;
+  catData: any;
+  address: any;
   constructor(
     private _fb: FormBuilder,
     private _snackBar: MatSnackBar,
@@ -48,14 +52,17 @@ export class HomeComponent implements OnInit {
   appConfig: any;
   ngOnInit(): void {
     this.appConfig = appConfig;
+    this.getCategory();
+    this.getAllCatData();
+    this.getAddress();
   }
 
-  changeType(type: any) {
-    if ($('.recentfilter-but').hasClass('active')) {
-      $('.recentfilter-but').removeClass('active');
-    }
-    $(`#${type}`).toggleClass('active');
+  getAddress() {
+    this.api.getAddress().subscribe((res: any) => {
+      this.address = res.message;
+    });
   }
+
   addData() {
     if (this.homeForm.valid) {
       this.api.addHomeContact(this.homeForm.value).subscribe((res: any) => {
@@ -87,5 +94,59 @@ export class HomeComponent implements OnInit {
   }
   onSlideChange() {
     console.log('slide change');
+  }
+  getAllCatData() {
+    let cat_data: any = [];
+    this.api.getRecentWorkCatData().subscribe((res: any) => {
+      res.message.forEach((element: any, key: any) => {
+        cat_data.push({
+          ID: element.ID,
+          cat_id: element.cat_id,
+          title: element.title,
+          image: this.appConfig.imageUrl + element.image1,
+        });
+      });
+      this.catData = cat_data;
+      console.log(this.catData);
+    });
+  }
+  changeType(type: any, id: any) {
+    if ($('.recentfilter-but').hasClass('active')) {
+      $('.recentfilter-but').removeClass('active');
+    }
+    $(`#${type}`).toggleClass('active');
+    let cat_data: any = [];
+    if (id !== 0) {
+      this.api.getRecentWorkCatData().subscribe((res: any) => {
+        res.message.forEach((element: any, key: any) => {
+          if (element.cat_id === id) {
+            cat_data.push({
+              ID: element.ID,
+              cat_id: element.cat_id,
+              title: element.title,
+              image: this.appConfig.imageUrl + element.image1,
+            });
+          }
+        });
+        this.catData = cat_data;
+      });
+    } else {
+      this.api.getRecentWorkCatData().subscribe((res: any) => {
+        res.message.forEach((element: any, key: any) => {
+          cat_data.push({
+            ID: element.ID,
+            cat_id: element.cat_id,
+            title: element.title,
+            image: this.appConfig.imageUrl + element.image1,
+          });
+        });
+        this.catData = cat_data;
+      });
+    }
+  }
+  getCategory() {
+    this.api.getRecentWorkCat().subscribe((res: any) => {
+      this.categories = res.message;
+    });
   }
 }

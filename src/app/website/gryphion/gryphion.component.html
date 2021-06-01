@@ -3,20 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="internal-headersech2">GRYPHON™ WiFi Router</h2>
+        <h2 class="internal-headersech2">
+          {{ singleData ? singleData.title : "" }}
+        </h2>
         <p class="internal-headersecp">
-          All security is built into the router so there is nothing to install
-          on each device.
+          {{ singleData ? singleData.qtxt : "" }}
         </p>
-        <p class="internal-headersecp1">
-          <a
-            href="#"
-            class="internal-headersecp1a"
-            data-toggle="modal"
-            data-target="#myModalsevices"
-            >Ask for a Quote</a
-          >
-        </p>
+        <app-askforqoute></app-askforqoute>
       </div>
     </div>
   </div>
@@ -28,9 +21,7 @@
     <div class="row">
       <div class="col-md-12">
         <p class="servicedetails-p">
-          <span>GRYPHON™</span> is a secure WiFi router using AI based learning
-          to make the Internet a safer place for our kids and all our connected
-          devices.
+          {{ singleData ? singleData.shdcr : "" }}
         </p>
       </div>
     </div>
@@ -43,21 +34,18 @@
     <div class="row">
       <div class="col-md-6 wow fadeInLeft">
         <div class="p-50">
-          <h4 class="about-project-h4">GRYPHON™ WiFi Router</h4>
-          <p class="about-project-p">Challange</p>
+          <h4 class="about-project-h4">
+            {{ singleData ? singleData.title : "" }}
+          </h4>
+          <p class="about-project-p">{{ singleData ? singleData.qtxt : "" }}</p>
           <p class="about-project-p1">
-            GRYPHON™ is a secure WiFi router using AI based learning to make the
-            Internet a safer place for our kids and all our connected devices.
-            All security is built into the router so there is nothing to install
-            on each device. GRYPHON™ comes with an app for real time management
-            of all your connected devices and allows you to collaborate with
-            other parents on website approval ratings.
+            {{ singleData ? singleData.fdcr : "" }}
           </p>
         </div>
       </div>
       <div class="col-md-6 wow fadeInLeft">
         <img
-          src="../../../assets/img/gryphon2.jpg"
+          [src]="singleData ? appConfig.imageUrl + singleData.image1 : ''"
           class="portfoliaabout-img"
           alt="portfoliaabout-sec"
         />
@@ -74,7 +62,7 @@
         <h4 class="ourprocess-h4">Our Process</h4>
       </div>
       <div class="container-fluid blue-bg">
-        <div class="container" style="padding-top: 200px">
+        <div class="container">
           <!--first section-->
           <div class="row align-items-center how-it-works">
             <div class="col-2 text-center bottom">
@@ -176,24 +164,21 @@
         <div class="whatwe-txt">
           <!--<h3 class="whatwe-txth3">Timely Delivery</h3>-->
           <p class="whatwe-txtp">
-            GRYPHON™ is the most powerful, all-in-one Hi-Speed Wi-Fi system
-            developed to protect the connected home.
+            {{ singleData ? singleData.whatwegot1 : "" }}
           </p>
         </div>
 
         <div class="whatwe-txt">
           <!--<h3 class="whatwe-txth3">Timely Delivery</h3>-->
           <p class="whatwe-txtp">
-            GRYPHON™ enables Parental Control and Safe URL Listing with
-            real-time request and approval from anywhere features.
+            {{ singleData ? singleData.whatwegot2 : "" }}
           </p>
         </div>
 
         <div class="whatwe-txt">
           <!--<h3 class="whatwe-txth3">Timely Delivery</h3>-->
           <p class="whatwe-txtp">
-            GRYPHON™ comes with Active Malware Filtering functionality along
-            with MESH networking and Intrusion Detection features.
+            {{ singleData ? singleData.whatwegot3 : "" }}
           </p>
         </div>
       </div>
@@ -322,147 +307,7 @@
   </div>
 </section>
 <!-- customer-say-end -->
-<section class="experience-sec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="experience-h2">Have you tried innobox?</h2>
-        <p class="experience-p">
-          Great things come in small packages. Innobox delivers excellence using
-          5G-enables Smart Technology. Come, explore the world of Wireless Smart
-          Devices with Innobox, the right partner for your Tech Transformation,
-          Business Intelligence and Delivery Excellence
-        </p>
-        <p class="experience-p1">
-          <a href="#" class="" data-toggle="modal" data-target="#myModalsevices"
-            >Get In Touch</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="modal" id="myModalsevices">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header
-             <div class="modal-header">
-             <h4 class="modal-title"></h4>
-
-             </div>
-             -->
-      <!-- Modal body -->
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-            <div
-              class="
-                innobox-contactfrmcontainer innobox-contactfrmcontainer-right
-              "
-            >
-              <form
-                class="form-contact innoboxcontact-form addcountry6"
-                id="innoboxcontact-form-services"
-              >
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="name-services">NAME</label>
-                    <input
-                      class="form-control"
-                      name="name"
-                      id="name-services"
-                      type="text"
-                    />
-                    <input
-                      name="latestworks"
-                      type="hidden"
-                      value="Latest Works-Ask for Quote"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email-services">E-MAIL</label>
-                    <input
-                      class="form-control"
-                      name="email"
-                      id="email-services"
-                      type="email"
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="company-services">COMPANY</label>
-                    <input
-                      class="form-control"
-                      name="company"
-                      id="company-services"
-                      type="text"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="mobilenumber-services">PHONE NUMBER</label>
-                    <input
-                      class="form-control"
-                      name="mobilenumber"
-                      id="mobilenumber-services"
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="messageabout-services"
-                      >What is your message about</label
-                    >
-                    <select
-                      class="form-control"
-                      id="messageabout-services"
-                      name="job2"
-                    >
-                      <option value="0">Select</option>
-                      <option>Sales</option>
-                      <option>Support</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="message-services">Message</label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="5"
-                      id="message-services"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-warning innoboxsubmit">
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal footer
-             <div class="modal-footer">
-             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-             </div>
-             -->
-    </div>
-  </div>
-</div>
+<app-getintouch></app-getintouch>
 
 <!-- The Modal -->
 <div class="modal formsucess_modalsucess" id="formsucess">

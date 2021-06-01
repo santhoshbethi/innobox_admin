@@ -43,464 +43,58 @@
         <h3 class="service-list-h3">Services</h3>
       </div>
     </div>
-
-    <div class="row p-10">
-      <div
-        class="
-          col-md-7
-          Connectivity-Networkstake-img
-          wow
-          fadeInRight
-          servicefordesktop
-        "
-      ></div>
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Network Stack</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/network-stack-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
+    <ng-container *ngFor="let item of services; let i = index">
+      <div class="row p-10">
+        <div
+          *ngIf="i % 2 === 0"
+          class="col-md-7 wow fadeInRight servicefordesktop"
+        >
+          <!-- <img
+            [src]="appConfig.imageUrl + item.image1"
+            alt="innobox"
+            class="mbl-serviceimg"
+          /> -->
+          <img
+            src="http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/services/file-1622541069221_Screenshot%20(45).png"
+            alt="innobox"
+            class="mbl-serviceimg"
+          />
+        </div>
+        <div class="col-md-5 wow fadeInLeft">
+          <div class="p-25">
+            <h4 class="services-network-h4">{{ item.title }}</h4>
+            <div class="serviformobile"></div>
+            <p class="services-network-p">
+              {{ item.shdcr }}
+            </p>
+            <p class="know-more">
+              <a
+                routerLink="/{{
+                  appConfig.routes.singleservice + '/' + item.ID
+                }}"
+                class="creative-alearnmore"
+                >Know More</a
+              >
+            </p>
           </div>
-          <p class="services-network-p">
-            We deliver advanced networking capabilities across a range of
-            devices by implementing IPv6, IP-mobility, seamless authentication
-            and secure-remote management.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.networkstack }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
+        </div>
+        <div
+          *ngIf="i % 2 !== 0"
+          class="col-md-7 wow fadeInRight servicefordesktop"
+        >
+          <!-- <img
+            [src]="appConfig.imageUrl + item.image1"
+            alt="innobox"
+            class="mbl-serviceimg"
+          /> -->
+          <img
+            src="http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/services/file-1622541069221_Screenshot%20(45).png"
+            alt="innobox"
+            class="mbl-serviceimg"
+          />
         </div>
       </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Testing-Automation-img wow fadeInRight serviformobile">
-
-                        </div> -->
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">5G Solutions</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/5g-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We can help you realise your cloud-to-clients solutions. Enterprise
-            and Homes can now benefit from 5G
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.fivegsolution }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="
-          col-md-7
-          Testing-sgsolution-img
-          wow
-          fadeInRight
-          servicefordesktop
-        "
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Connectivity-Networking-img wow fadeInRight serviformobile">
-
-    						</div> -->
-      <div
-        class="
-          col-md-7
-          Connectivity-Networking-img
-          wow
-          fadeInRight
-          servicefordesktop
-        "
-      ></div>
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Connectivity (Networking)</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/networking-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We deliver advanced networking capabilities across a range of
-            devices by implementing IPv6, IP-mobility, seamless authentication
-            and secure-remote management.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.connectivity }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Testing-Automation-img wow fadeInRight serviformobile">
-
-                        </div> -->
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Wi-Fi 6 (802.11ax) Solutions</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/wifi-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            Innobox can help solve your High Density wireless device solutions
-            without compromising the range and throughput
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.wifisolution }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="col-md-7 wifi6-sgsolution-img wow fadeInRight servicefordesktop"
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Connectivity-Networking-img wow fadeInRight serviformobile">
-
-    						</div> -->
-      <div
-        class="col-md-7 cloudsapps-img wow fadeInRight servicefordesktop"
-      ></div>
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Cloud & Desktop Applications</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/cloudapps-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            Application development on desktop or cloud, facilitating clients
-            and users for early detection of issues, without compromising on
-            security, without worrying about scalability and to provide best
-            quality products has become wide-spread practice.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.clouddesktop }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Testing-Automation-img wow fadeInRight serviformobile">
-
-                        </div> -->
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">IoT</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/iot-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            Innobox can help solve your High Density wireless device solutions
-            without compromising the range and throughput
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.iot }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="col-md-7 iot-sgsolution-img wow fadeInRight servicefordesktop"
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <div
-        class="col-md-7 Linux-and-Android-img wow fadeInRight servicefordesktop"
-      ></div>
-      <div class="col-md-5 wow fadeInRight">
-        <div class="p-25">
-          <h4 class="services-network-h4">Linux and Android</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/serviece-linux-image.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We develop agile integration of Linux & Android products based on
-            open-source OS, middleware, drivers, kernel, boot-loader, frameworks
-            and applications to provide customers with diversified applications.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.linuxandroid }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Testing-Automation-img wow fadeInRight serviformobile">
-
-                </div> -->
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Testing Automation</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/testing-fnl.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We help determine the best testing solutions and frameworks for test
-            automation, data integrity checks and other QA methodologies with
-            minimal human intervention to test complicated business logic.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.testingautomation }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="
-          col-md-7
-          Testing-Automation-img
-          wow
-          fadeInRight
-          servicefordesktop
-        "
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <div
-        class="
-          col-md-7
-          wireless-technologies-img
-          wow
-          fadeInLeft
-          servicefordesktop
-        "
-      ></div>
-      <div class="col-md-5 wow fadeInRight">
-        <div class="p-25">
-          <h4 class="services-network-h4">Wireless Technologies</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/service-wireless.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We deliver advanced ultra-high-speed wireless technologies that
-            enable seamless connectivity ranging from long-range advanced
-            wireless technologies (5G & LTE) to short-range wireless
-            technologies (Wi-Fi & Bluetooth).
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.wirelesstechnology }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Artificial-Intelligence-img wow fadeInRight serviformobile">
-
-    					</div> -->
-      <div class="col-md-5 wow fadeInRight">
-        <div class="p-25">
-          <h4 class="services-network-h4">Artificial Intelligence</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/service-ai.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We employ advanced deep neural networks, machine learning
-            capabilities and Artificial Intelligence to improve overall business
-            productivity and develop flagship IT solutions across various
-            domains.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.ai }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="
-          col-md-7
-          Artificial-Intelligence-img
-          wow
-          fadeInLeft
-          servicefordesktop
-        "
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <div
-        class="col-md-7 Certification-img wow fadeInRight servicefordesktop"
-      ></div>
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Certification</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/certification-serviece-image.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We assist enterprises in meeting the requirements, and acquiring
-            Wi-Fi Alliance Certification, Global Certification Forum (GCF) and
-            PCS Type Certification Review Board (PTCRB) requirements for your
-            cellular device.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.certification }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Mobile-application-img wow fadeInRight serviformobile">
-
-    						</div> -->
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Mobile Applications</h4>
-          <div class="serviformobile">
-            <img
-              src="../../../assets/img/787-1-mobile.jpg"
-              alt="innobox"
-              class="mbl-serviceimg"
-            />
-          </div>
-          <p class="services-network-p">
-            We develop next-gen mobile applications that are cross-compatible,
-            adaptable and scalable across all major operating systems. Our
-            expertise lies across all latest and advanced application
-            development platforms in the market.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.mobileapplication }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-      <div
-        class="
-          col-md-7
-          Mobile-application-img
-          wow
-          fadeInRight
-          servicefordesktop
-        "
-      ></div>
-    </div>
-
-    <div class="row p-10">
-      <!-- <div class="col-md-7 Mobility-img wow fadeInRight serviformobile">
-
-                            </div> -->
-      <div
-        class="col-md-7 Mobility-img wow fadeInRight servicefordesktop"
-      ></div>
-      <div class="col-md-5 wow fadeInLeft">
-        <div class="p-25">
-          <h4 class="services-network-h4">Mobility</h4>
-          <p class="services-network-p">
-            We develop, integrate and manage enterprise-wide mobility solutions
-            using the best platforms and architectures while assuring security
-            compliance and improved workplace productivity.
-          </p>
-          <p class="know-more">
-            <a
-              routerLink="/{{ appConfig.routes.mobility }}"
-              class="creative-alearnmore"
-              >Know More</a
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="col-md-7 network-image wow fadeInRight serviformobile">
-
-    					</div>-->
+    </ng-container>
   </div>
 </section>
 <!-- services-list section - end -->

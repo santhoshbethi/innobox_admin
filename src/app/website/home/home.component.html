@@ -6,18 +6,38 @@
         <swiper
           [slidesPerView]="1"
           [spaceBetween]="50"
-          [pagination]="{ type: 'fraction' }"
           [navigation]="true"
           [effect]="'fade'"
         >
           <ng-template swiperSlide
-            ><img src="../../../assets/img/slider-img1.jpg" alt=""
+            ><div class="title" data-swiper-parallax="-100">
+              <h2>We Deliver</h2>
+              <p>
+                Tech that Redefines<br />
+                how your IT works
+              </p>
+            </div>
+            <img src="../../../assets/img/slider-img1.jpg" alt=""
           /></ng-template>
           <ng-template swiperSlide
-            ><img src="../../../assets/img/gryphon-change.jpg" alt=""
+            ><div class="title" data-swiper-parallax="-100">
+              <h2>Road Traffic</h2>
+              <p>
+                Intelligence Delivered <br />
+                with Accuracy
+              </p>
+            </div>
+            <img src="../../../assets/img/gryphon-change.jpg" alt=""
           /></ng-template>
           <ng-template swiperSlide
-            ><img src="../../../assets/img/slider-img-greyn.jpg" alt=""
+            ><div class="title" data-swiper-parallax="-100">
+              <h2>Intelligent</h2>
+              <p>
+                Connected Devices for <br />
+                next-gen Networking
+              </p>
+            </div>
+            <img src="../../../assets/img/slider-img-greyn.jpg" alt=""
           /></ng-template>
         </swiper>
       </div>
@@ -99,146 +119,42 @@
     <div class="row">
       <div class="col-md-12">
         <!--  -->
-        <div id="logoParade">
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/nytec1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/intel1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/inseego2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/easycare.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/covidio2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/novatel-wirless1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/wallflower1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/apco1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/critical1.png"
-            alt="Demo image"
-          />
-          <!-- <img class="logoParade-img" src="img/austraffic1.png" alt="Demo image" /> -->
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/nytec1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/intel1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/inseego2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/easycare.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/covidio2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/novatel-wirless1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/wallflower1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/apco1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/critical1.png"
-            alt="Demo image"
-          />
-          <!-- <img class="logoParade-img" src="img/austraffic1.png" alt="Demo image" /> -->
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/nytec1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/intel1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/inseego2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/easycare.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/covidio2.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/novatel-wirless1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/wallflower1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/apco1.png"
-            alt="Demo image"
-          />
-          <img
-            class="logoParade-img"
-            src="../../../assets/img/critical1.png"
-            alt="Demo image"
-          />
-          <!-- <img class="logoParade-img" src="img/austraffic1.png" alt="Demo image" /> -->
-        </div>
+        <swiper
+          [slidesPerView]="6"
+          [spaceBetween]="50"
+          [navigation]="true"
+          [effect]="'fade'"
+          [autoplay]="true"
+        >
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/nytec1.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/intel1.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/inseego2.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/easycare.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/covidio2.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/novatel-wirless1.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/wallflower1.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/apco1.png" alt=""
+          /></ng-template>
+          <ng-template swiperSlide
+            ><img src="../../../assets/img/critical1.png" alt=""
+          /></ng-template>
+        </swiper>
+
         <!--  -->
       </div>
     </div>
@@ -258,53 +174,23 @@
       <div class="col-md-12">
         <div class="filter text-center">
           <button
-            (click)="changeType('type1')"
-            id="type1"
+            (click)="changeType('type0', 0)"
+            id="type0"
             data-name="*"
             class="btn btn-link recentfilter-but active"
           >
             All
           </button>
-          <button
-            (click)="changeType('type2')"
-            id="type2"
-            data-name=".Networking"
-            class="btn btn-link recentfilter-but"
-          >
-            Networking & Wireless
-          </button>
-          <button
-            (click)="changeType('type3')"
-            id="type3"
-            data-name=".Applications"
-            class="btn btn-link recentfilter-but"
-          >
-            Applications
-          </button>
-          <button
-            (click)="changeType('type4')"
-            id="type4"
-            data-name=".Testing"
-            class="btn btn-link recentfilter-but"
-          >
-            Testing
-          </button>
-          <button
-            (click)="changeType('type5')"
-            id="type5"
-            data-name=".IoT"
-            class="btn btn-link recentfilter-but"
-          >
-            IoT
-          </button>
-          <button
-            (click)="changeType('type6')"
-            id="type6"
-            data-name=".Intelligence"
-            class="btn btn-link recentfilter-but"
-          >
-            Intelligence & Analytics
-          </button>
+          <ng-container *ngFor="let items of categories; let i = index">
+            <button
+              (click)="changeType('type' + (i + 1), items.ID)"
+              [id]="'type' + (i + 1)"
+              data-name="*"
+              class="btn btn-link recentfilter-but"
+            >
+              {{ items.name }}
+            </button>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -312,110 +198,41 @@
     <div class="row">
       <div class="col-md-12">
         <div class="grid row">
-          <div
-            class="grid-item col-md-4 Networking Wireless Linux wow fadeInLeft"
-          >
-            <a
-              class="portfoliodetail-a"
-              routerLink="{{ appConfig.routes.gryphion }}"
+          <ng-container *ngFor="let items of catData; let i = index">
+            <div
+              [class]="
+                i % 2 === 0
+                  ? 'grid-item
+                col-md-4
+                Networking
+                Wireless
+                Linux
+                wow
+                fadeInLeft'
+                  : 'grid-item
+                col-md-8
+                Networking
+                Wireless
+                Linux
+                wow
+                fadeInRight'
+              "
             >
-              <div class="recentboxdiv">
-                <!--<span class="recentboxdiv-span">WIFI</span>-->
-                <h3 class="recentboxdiv-h3">
-                  Secure and Intelligent Home Router
-                </h3>
-                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
-                <img
-                  src="../../../assets/img/gryphon3.jpg"
-                  class="recentboxdivimg"
-                />
-              </div>
-            </a>
-          </div>
-
-          <div
-            class="
-              grid-item
-              col-md-8
-              wow
-              Networking
-              Automation
-              Wireless
-              Certification
-              fadeInRight
-            "
-          >
-            <a
-              class="portfoliodetail-a"
-              routerLink="{{ appConfig.routes.fiveg }}"
-            >
-              <div class="recentboxdiv recentboxdiv1">
-                <img
-                  src="../../../assets/img/5g3.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">AI</span>-->
-                <h3 class="recentboxdiv-h3">5G Home Gateway</h3>
-                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
-              </div>
-            </a>
-          </div>
-
-          <div class="grid-item col-md-8 Automation wow fadeInLeft">
-            <a
-              class="portfoliodetail-a"
-              routerLink="{{ appConfig.routes.lab }}"
-            >
-              <div class="recentboxdiv recentboxdiv">
-                <img
-                  src="../../../assets/img/lab3.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">Robotic Process Automation</h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-              </div>
-            </a>
-          </div>
-
-          <div class="grid-item col-md-4 Intelligence wow fadeInRight">
-            <a
-              class="portfoliodetail-a"
-              routerLink="{{ appConfig.routes.greyn }}"
-            >
-              <div class="recentboxdiv">
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">
-                  Video Traffic Analytics with Computer Vision
-                </h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-                <img
-                  src="../../../assets/img/greyn4.jpg"
-                  class="recentboxdivimg"
-                />
-              </div>
-            </a>
-          </div>
-          <!--  -->
-
-          <!-- </div> -->
-
-          <div class="grid-item col-md-12 Automation wow fadeInLeft">
-            <a
-              class="portfoliodetail-a"
-              routerLink="{{ appConfig.routes.mobileapps }}"
-            >
-              <div class="recentboxdiv recentboxdiv">
-                <img
-                  src="../../../assets/img/1100-1-mobile.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">Mobile Apps</h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-              </div>
-            </a>
-          </div>
+              <a
+                class="portfoliodetail-a"
+                routerLink="/{{
+                  appConfig.routes.recentworkcat + '/' + items.ID
+                }}"
+              >
+                <div class="recentboxdiv">
+                  <h3 class="recentboxdiv-h3">
+                    {{ items.title }}
+                  </h3>
+                  <img [src]="items.image" class="recentboxdivimg" />
+                </div>
+              </a>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -766,67 +583,35 @@
             </div>
             <div class="col-md-6">
               <div class="home-contactaddreess">
-                <p class="contact-sec-p1">
-                  <img
-                    src="../../../assets/img/placeholder.svg"
-                    class="contactformhome-icon"
-                  />
-                  &nbsp;<span class="contact-place"
-                    >TEXAS United States of America</span
-                  >
-                  <br />
-                  Innobox Inc, 5525 N MacArthur Blvd Suite #670 Irving, TX
-                  75038<br />
-                  <span><strong>Phone:</strong></span>
-                  <a href="tel:+18588486782">+1-858-848-6782</a>
-                </p>
-                <p class="contact-sec-p1">
-                  <img
-                    src="../../../assets/img/placeholder.svg"
-                    class="contactformhome-icon"
-                  />
-                  &nbsp;<span class="contact-place"> Hyderabad India</span>
-                  <br />
-                  Innobox Systems Pvt Ltd, Plot No: 1057M, MVS Entrada, Road
-                  #45, Jubilee Hills, Hyderabad, Telangana, 500 033<br />
-                  <span><strong>Phone:</strong></span>
-                  <a href="tel:+919394666269">+91-939-466-6269</a>
-                </p>
-
-                <p class="contact-sec-p1">
-                  <img
-                    src="../../../assets/img/placeholder.svg"
-                    class="contactformhome-icon"
-                  />
-                  &nbsp;<span class="contact-place"> Bengaluru India</span>
-                  <br />
-                  Innobox Systems Pvt Ltd, #5 AM Industrial Estate, Sourabha
-                  Complex, Kudlu Gate, Bengaluru 560068<br />
-                  <span><strong>Phone:</strong></span>
-                  <a href="tel:+919394666269">+91-939-466-6269</a>
-                </p>
-
-                <!-- <p class="contact-sec-p1">
-                                        <img src="img/callicon.svg" class="contactformhome-icon"> &nbsp;
-                                        Phone: <a href="tel:+18588486782" class="contact-seca1">+1-858-848-6782</a><br>
-                                        <a href="tel:+91-939-466-6269" class="contact-seca1">+91-939-466-6269</a>
-                                    </p> -->
-
-                <!-- <p class="contact-sec-p1">
-                                        <img src="img/phoneicon.svg" class="contactformhome-icon"> &nbsp;
-                                        Fax: <a href="tel:+19142961573" class="contact-seca1">+1 914-296-1573</a>
-                                    </p>-->
-
-                <p class="contact-sec-p1">
-                  <img
-                    src="../../../assets/img/mailicon.svg"
-                    class="contactformhome-icon"
-                  />
-                  &nbsp; Mail:
-                  <a href="mailto:info@innobox.com" class="contact-seca1"
-                    >info@innobox.com</a
-                  >
-                </p>
+                <ng-container *ngFor="let item of address; let i = index">
+                  <p class="contact-sec-p1">
+                    <img
+                      src="../../../assets/img/placeholder.svg"
+                      class="contactformhome-icon"
+                    />
+                    &nbsp;<span class="contact-place">{{
+                      item.locationName
+                    }}</span>
+                    <br />
+                    {{ item.locationAddress }}<br />
+                    <span><strong>Phone:&nbsp;</strong></span>
+                    <a href="{{ 'tel: ' + item.phoneNumber }}">{{
+                      item.phoneNumber
+                    }}</a>
+                  </p>
+                  <p *ngIf="i === 0" class="contact-sec-p1">
+                    <img
+                      src="../../../assets/img/mailicon.svg"
+                      class="contactformhome-icon"
+                    />
+                    &nbsp; Mail:
+                    <a
+                      href="{{ 'tomail: ' + item.emailAddress }}"
+                      class="contact-seca1"
+                      >{{ item.emailAddress }}</a
+                    >
+                  </p>
+                </ng-container>
               </div>
             </div>
           </div>

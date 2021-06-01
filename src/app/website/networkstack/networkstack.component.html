@@ -3,20 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="internal-headersech2">Network Stack<br /></h2>
+        <h2 class="internal-headersech2">
+          {{ serviceData ? serviceData.title : "" }}<br />
+        </h2>
         <p class="internal-headersecp">
-          We are extremely well versed with developing products and solutions
-          for your Networking and Connectivity needs.
+          {{ serviceData ? serviceData.qtxt : "" }}
         </p>
-        <p class="internal-headersecp1">
-          <a
-            href="#"
-            class="internal-headersecp1a"
-            data-toggle="modal"
-            data-target="#myModalsevices"
-            >Talk to Our Expert</a
-          >
-        </p>
+        <app-askforqoute></app-askforqoute>
       </div>
     </div>
   </div>
@@ -43,120 +36,27 @@
     <div class="row">
       <div class="col-md-9 wow fadeInLeft">
         <div class="whyinnoboxdiv1">
-          <h2 class="whyinnoboxdiv1-h2">Network Stack</h2>
+          <h2 class="whyinnoboxdiv1-h2">
+            {{ serviceData ? serviceData.title : "" }}
+          </h2>
           <p class="whyinnoboxdiv1-p1">
-            Connectivity and uptime are assumed to be available in the present
-            wireless networking solutions. Resilience supported by an advanced
-            network configuration are required for the new age ever evolving
-            organizations, smart homes and industries.
-          </p>
-          <p class="whyinnoboxdiv1-p1">
-            The Innobox team has complete understanding of the 802.xx
-            specification and its implementations, including Security, QoS and
-            Mobility. We are extremely well versed with compliance,
-            certification and productization. Over the past few years, our team
-            has implemented Secure Connectivity, Remote storage and Management,
-            Tuning of Streaming Media over the 802.xx communication standards.
-          </p>
-          <p class="whyinnoboxdiv1-p1">
-            The team of Networking Engineers at Innobox has also worked on
-            acceleration and optimizations at every layer in the network stack
-            for both wired and wireless communication, applications like AVOD
-            systems, Virus and Spam filtering, Provisioning and Management,
-            Traffic Shaping and Management.
-          </p>
-
-          <p class="whyinnoboxdiv1-p1">
-            Advanced networking technologies are key in maintaining safe and
-            productive environments. Innobox with its extensive wireless
-            networking experience can help develop 5G & Wi-Fi 6 interoperable
-            solutions to support many business, industrial and IoT applications
+            {{ serviceData ? serviceData.fdcr : "" }}
           </p>
         </div>
 
         <div class="whyinnoboxdiv2 inner-networkstack"></div>
-
-        <!-- <div class="whyinnoboxdiv1">
-                        <h2 class="whyinnoboxdiv1-h2">New year clean</h2>
-                        <p class="whyinnoboxdiv1-p2">
-                            What better way to start fresh than with a major clean of the office. Have your employees tidy up their desks, throwing away or filing clutter. You could get the carpets cleaned, windows washed and even tidy up that store room. Think about what you can clean to make the office look fresh come the new year.
-                        </p>
-
-                        <div class="row greenery-row">
-                            <div class="col-md-6">
-                                <h2 class="whyinnoboxdiv1-h2">Greenery</h2>
-                                <p class="whyinnoboxdiv1-p2">
-                                    What better way to start fresh than with a major clean of the office. Have your employees tidy up their desks, throwing away or filing clutter. You could get the carpets cleaned, windows washed and even tidy up that store room. Think about what you can clean to make the office look fresh come the new year.
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <h2 class="whyinnoboxdiv1-h2">Add some colour</h2>
-                                <p class="whyinnoboxdiv1-p2">
-                                    What better way to start fresh than with a major clean of the office. Have your employees tidy up their desks, throwing away or filing clutter. You could get the carpets cleaned, windows washed and even tidy up that store room. Think about what you can clean to make the office look fresh come the new year.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>-->
       </div>
       <div class="col-md-3 wow fadeInRight">
         <h3 class="highlights-h3">Highlights</h3>
-
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">01</h3>
-          <p class="highlights-lip1">
-            Developed products that comply with multiple certification across
-            multiple countries
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">02</h3>
-          <p class="highlights-lip1">
-            Developed solutions for Connectivity with Sensors and Connectivity
-            with cloud
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">03</h3>
-          <p class="highlights-lip1">
-            Network throughput and QoS over Wi-Fi and Ethernet
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">04</h3>
-          <p class="highlights-lip1">
-            Conceptualizing the Product and help in brainstorming
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">05</h3>
-          <p class="highlights-lip1">
-            Software Architect & Design and development.
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">06</h3>
-          <p class="highlights-lip1">
-            Unit testing and Automation testing so that a robust product can go
-            out.
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
-        <div class="highlights-li">
-          <h3 class="highlights-lih3">07</h3>
-          <p class="highlights-lip1">
-            Delivery & maintenance until product goes out of life.
-          </p>
-          <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
-        </div>
+        <ng-container *ngFor="let item of highlights; let i = index">
+          <div class="highlights-li">
+            <h3 class="highlights-lih3">{{ "0" + (i + 1) }}</h3>
+            <p class="highlights-lip1">
+              {{ item.cntnt }}
+            </p>
+            <!-- <p class="highlights-lip2">03 Jun 2018</p>-->
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>

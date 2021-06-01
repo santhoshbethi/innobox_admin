@@ -8,15 +8,7 @@
           We create innovative digital products that impact the way people
           experience the world.
         </p>
-        <p class="internal-headersecp1">
-          <a
-            href="#"
-            class="internal-headersecp1a"
-            data-toggle="modal"
-            data-target="#myModalsevices"
-            >Ask for a Quote</a
-          >
-        </p>
+        <app-askforqoute></app-askforqoute>
       </div>
     </div>
   </div>
@@ -48,171 +40,64 @@
       <div class="col-md-12">
         <div class="filter text-center">
           <button
-            (click)="changeType('type1')"
-            id="type1"
+            (click)="changeType('type0', 0)"
+            id="type0"
             data-name="*"
             class="btn btn-link recentfilter-but active"
           >
             All
           </button>
-          <button
-            (click)="changeType('type2')"
-            id="type2"
-            data-name=".Networking"
-            class="btn btn-link recentfilter-but"
-          >
-            Connectivity (Networking)
-          </button>
-          <button
-            (click)="changeType('type3')"
-            id="type3"
-            data-name=".Automation"
-            class="btn btn-link recentfilter-but"
-          >
-            Testing Automation
-          </button>
-          <button
-            (click)="changeType('type4')"
-            id="type4"
-            data-name=".Artificial"
-            class="btn btn-link recentfilter-but"
-          >
-            Artificial Intelligence
-          </button>
-          <button
-            (click)="changeType('type5')"
-            id="type5"
-            data-name=".Wireless"
-            class="btn btn-link recentfilter-but"
-          >
-            Wireless Technology
-          </button>
-          <button
-            (click)="changeType('type6')"
-            id="type6"
-            data-name=".Certification"
-            class="btn btn-link recentfilter-but"
-          >
-            Certification
-          </button>
-          <button
-            (click)="changeType('type7')"
-            id="type7"
-            data-name=".Linux"
-            class="btn btn-link recentfilter-but"
-          >
-            Linux and Android
-          </button>
+          <ng-container *ngFor="let items of categories; let i = index">
+            <button
+              (click)="changeType('type' + (i + 1), items.ID)"
+              [id]="'type' + (i + 1)"
+              data-name="*"
+              class="btn btn-link recentfilter-but"
+            >
+              {{ items.name }}
+            </button>
+          </ng-container>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="grid row">
-          <div
-            class="grid-item col-md-4 Networking Wireless Linux wow fadeInLeft"
-          >
-            <a
-              class="portfoliodetail-a"
-              routerLink="/{{ appConfig.routes.gryphion }}"
+          <ng-container *ngFor="let items of catData; let i = index">
+            <div
+              [class]="
+                i % 2 === 0
+                  ? 'grid-item
+                col-md-4
+                Networking
+                Wireless
+                Linux
+                wow
+                fadeInLeft'
+                  : 'grid-item
+                col-md-8
+                Networking
+                Wireless
+                Linux
+                wow
+                fadeInRight'
+              "
             >
-              <div class="recentboxdiv">
-                <!--<span class="recentboxdiv-span">WIFI</span>-->
-                <h3 class="recentboxdiv-h3">
-                  Secure and Intelligent Home Router
-                </h3>
-                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
-                <img
-                  src="../../../assets/img/gryphon3.jpg"
-                  class="recentboxdivimg"
-                />
-              </div>
-            </a>
-          </div>
-
-          <div
-            class="
-              grid-item
-              col-md-8
-              wow
-              Networking
-              Automation
-              Wireless
-              Certification
-              fadeInRight
-            "
-          >
-            <a
-              class="portfoliodetail-a"
-              routerLink="/{{ appConfig.routes.fiveg }}"
-            >
-              <div class="recentboxdiv recentboxdiv1">
-                <img
-                  src="../../../assets/img/5g3.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">AI</span>-->
-                <h3 class="recentboxdiv-h3">5G Home Gateway</h3>
-                <!--<p class="recentboxdiv-p1">Robert Perez    |   45 min ago</p>-->
-              </div>
-            </a>
-          </div>
-
-          <div class="grid-item col-md-8 Automation wow fadeInLeft">
-            <a
-              class="portfoliodetail-a"
-              routerLink="/{{ appConfig.routes.lab }}"
-            >
-              <div class="recentboxdiv recentboxdiv">
-                <img
-                  src="../../../assets/img/lab3.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">Robotic Process Automation</h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-              </div>
-            </a>
-          </div>
-
-          <div class="grid-item col-md-4 Intelligence wow fadeInRight">
-            <a
-              class="portfoliodetail-a"
-              routerLink="/{{ appConfig.routes.greyn }}"
-            >
-              <div class="recentboxdiv">
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">
-                  Video Traffic Analytics with Computer Vision
-                </h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-                <img
-                  src="../../../assets/img/greyn4.jpg"
-                  class="recentboxdivimg"
-                />
-              </div>
-            </a>
-          </div>
-          <!--  -->
-
-          <!-- </div> -->
-
-          <div class="grid-item col-md-12 Automation wow fadeInLeft">
-            <a
-              class="portfoliodetail-a"
-              routerLink="/{{ appConfig.routes.mobileapps }}"
-            >
-              <div class="recentboxdiv recentboxdiv">
-                <img
-                  src="../../../assets/img/1100-1-mobile.jpg"
-                  class="recentboxdivimg recentboxdivimg1"
-                /><br />
-                <!--<span class="recentboxdiv-span">Security</span>-->
-                <h3 class="recentboxdiv-h3">Mobile Apps</h3>
-                <!--<p class="recentboxdiv-p1">Arthur Hubbard    |  56 mint ago</p>-->
-              </div>
-            </a>
-          </div>
+              <a
+                class="portfoliodetail-a"
+                routerLink="/{{
+                  appConfig.routes.recentworkcat + '/' + items.ID
+                }}"
+              >
+                <div class="recentboxdiv">
+                  <h3 class="recentboxdiv-h3">
+                    {{ items.title }}
+                  </h3>
+                  <img [src]="items.image" class="recentboxdivimg" />
+                </div>
+              </a>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>

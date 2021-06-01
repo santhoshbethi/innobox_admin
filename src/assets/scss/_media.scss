@@ -575,3 +575,47 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+.swiper-slide.swiper-slide-active img {
+  width: 100%;
+}
+.swiper-slide .title {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: white;
+  font-weight: bold;
+  font-size: 12pt;
+  font-family: "Mark Bold" !important;
+}
+.swiper-slide .title h2 {
+  color: rgb(63, 59, 59);
+  font-weight: 600;
+}
+.swiper-slide .title p {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .swiper-slide .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-slide .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .swiper-slide .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .swiper-slide .title {
+    display: none;
+  }
+}

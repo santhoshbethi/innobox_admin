@@ -184,46 +184,35 @@
           </form>
         </div>
       </div>
-      <div class="col-md-3 wow fadeInRight">
-        <div class="innobox-addressdiv">
-          <h2 class="innobox-contactaddress-h2">United States of America</h2>
-          <h2 class="innobox-contactaddress-h2">TEXAS</h2>
-          <p class="innobox-contactaddress-p">
-            Innobox Inc,<br />
-            5525 N MacArthur Blvd Suite #670<br />
-            Irving, TX 75038<br />
-            <span><strong>Phone:</strong></span>
-            <a href="tel:+18588486782">+1-858-848-6782</a>
-          </p>
-
-          <h2 class="innobox-contactaddress-h2">India</h2>
-          <h2 class="innobox-contactaddress-h2">Hyderabad</h2>
-          <p class="innobox-contactaddress-p">
-            Innobox Systems Pvt Ltd<br />Plot No: 1057M, MVS Entrada<br />
-            Road #45, Jubilee Hills<br />Hyderabad, Telangana, 500 033<br />
-            <span><strong>Phone:</strong></span>
-            <a href="tel:+919394666269">+91-939-466-6269</a>
-          </p>
-
-          <h2 class="innobox-contactaddress-h2">India</h2>
-          <h2 class="innobox-contactaddress-h2">Bengaluru</h2>
-          <p class="innobox-contactaddress-p">
-            Innobox Systems Pvt Ltd<br />#5 AM Industrial Estate<br />Sourabha
-            Complex, Kudlu Gate,<br />Bengaluru 560068<br />
-            <span><strong>Phone:</strong></span>
-            <a href="tel:+919394666269">+91-939-466-6269</a>
-          </p>
-
-          <!-- <h2 class="innobox-contactaddress-h2">Phone:</h2>
-                            <p class="innobox-contactaddress-p">
-                                <a href="tel:+19142961573">+1-858-848-6782</a><br>
-                                <a href="tel:+919394666269">+91-939-466-6269</a>
-                            </p> -->
-
-          <h2 class="innobox-contactaddress-h2">E-mail:</h2>
-          <p class="innobox-contactaddress-p">
-            <a href="mailto:info@innobox.com">info@innobox.com</a>
-          </p>
+      <div class="col-md-3">
+        <div class="home-contactaddreess">
+          <ng-container *ngFor="let item of address; let i = index">
+            <p class="contact-sec-p1">
+              <img
+                src="../../../assets/img/placeholder.svg"
+                class="contactformhome-icon"
+              />
+              &nbsp;<span class="contact-place">{{ item.locationName }}</span>
+              <br />
+              {{ item.locationAddress }}<br />
+              <span><strong>Phone:&nbsp;</strong></span>
+              <a href="{{ 'tel: ' + item.phoneNumber }}">{{
+                item.phoneNumber
+              }}</a>
+            </p>
+            <p *ngIf="i === 0" class="contact-sec-p1">
+              <img
+                src="../../../assets/img/mailicon.svg"
+                class="contactformhome-icon"
+              />
+              &nbsp; Mail:
+              <a
+                href="{{ 'tomail: ' + item.emailAddress }}"
+                class="contact-seca1"
+                >{{ item.emailAddress }}</a
+              >
+            </p>
+          </ng-container>
         </div>
       </div>
     </div>

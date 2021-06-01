@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import * as $ from 'jquery';
 import { ApiService } from 'src/app/services/api.service';
+
 @Component({
-  selector: 'app-contactus',
-  templateUrl: './contactus.component.html',
+  selector: 'app-askforqoute',
+  templateUrl: './askforqoute.component.html',
+  styleUrls: ['./askforqoute.component.scss'],
 })
-export class ContactusComponent implements OnInit {
+export class AskforqouteComponent implements OnInit {
   contactForm: FormGroup;
-  address: any;
   constructor(
     private _fb: FormBuilder,
     private api: ApiService,
@@ -25,14 +25,7 @@ export class ContactusComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.getAddress();
-  }
-  getAddress() {
-    this.api.getAddress().subscribe((res: any) => {
-      this.address = res.message;
-    });
-  }
+  ngOnInit(): void {}
   addData() {
     if (this.contactForm.valid) {
       this.api.addContactUs(this.contactForm.value).subscribe((res: any) => {

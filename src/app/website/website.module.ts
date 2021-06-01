@@ -44,6 +44,7 @@ import { WebsiteRoutingModule } from './website-routing.module';
 import { WhyusComponent } from './whyus/whyus.component';
 import { WifisolutionComponent } from './wifisolution/wifisolution.component';
 import { WirelesstechnologyComponent } from './wirelesstechnology/wirelesstechnology.component';
+import { AskforqouteComponent } from './askforqoute/askforqoute.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { WirelesstechnologyComponent } from './wirelesstechnology/wirelesstechno
     MultibandgatewayComponent,
     TermsComponent,
     LegalComponent,
+    AskforqouteComponent,
   ],
   imports: [
     CommonModule,

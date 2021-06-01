@@ -57,7 +57,7 @@
                 class="creative-alearnmore"
                 data-toggle="modal"
                 data-target="#myModal1"
-                (click)="getCareerById(item.ID)"
+                (click)="getCareerById(item.ID, item.jobTitle)"
               >
                 Apply Now & Know More
               </button>
@@ -133,6 +133,8 @@
                 class="form-contact innoboxcontact-form addcountry"
                 id="submitformtest"
                 enctype="multipart/form-data"
+                [formGroup]="applynow1Form"
+                (ngSubmit)="addApplyData()"
               >
                 <div class="form-group row">
                   <div class="col-md-6">
@@ -141,20 +143,18 @@
                       class="form-control"
                       name="name"
                       id="name1"
+                      formControlName="fullname"
                       type="text"
                     />
-                    <input
-                      name="selectedjob1"
-                      id="selectedjob1"
-                      type="hidden"
-                      value="Linux_Networking_Developer"
-                    />
-                    <input
-                      name="pagename1"
-                      id="pagename1"
-                      type="hidden"
-                      value="Careers_Page"
-                    />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        applynow1Form.get('fullname')?.touched &&
+                        applynow1Form.get('fullname')?.errors
+                      "
+                    >
+                      Full Name is Required
+                    </P>
                   </div>
                   <div class="col-md-6">
                     <label for="email1">E-MAIL</label>
@@ -162,8 +162,18 @@
                       class="form-control"
                       name="email"
                       id="email1"
+                      formControlName="email"
                       type="email"
                     />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        applynow1Form.get('email')?.touched &&
+                        applynow1Form.get('email')?.errors
+                      "
+                    >
+                      Email is Required
+                    </P>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -171,25 +181,50 @@
                     <label for="mobilenumber1">PHONE NUMBER</label>
                     <input
                       class="form-control"
-                      name="mobilenumber"
-                      id="mobilenumber1"
+                      name="mobile"
+                      formControlName="mobile"
+                      id="mobile1"
                       type="text"
                     />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        applynow1Form.get('mobile')?.touched &&
+                        applynow1Form.get('mobile')?.errors
+                      "
+                    >
+                      Mobile is Required
+                    </P>
                   </div>
                   <div class="col-md-6">
                     <label for="company1">HIGHER QUALIFICATION</label>
                     <input
                       class="form-control"
                       name="company"
+                      formControlName="previousCompany"
                       id="company1"
                       type="text"
                     />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        applynow1Form.get('previousCompany')?.touched &&
+                        applynow1Form.get('previousCompany')?.errors
+                      "
+                    >
+                      Company is Required
+                    </P>
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="">Upload Resume</label>
-                    <input type="file" name="attach1" id="file" />
+                    <input
+                      (change)="file1Change($event)"
+                      type="file"
+                      name="attach1"
+                      id="file"
+                    />
                   </div>
                 </div>
 
@@ -199,6 +234,8 @@
                     <textarea
                       class="form-control"
                       name="message"
+                      fo
+                      formControlName="message"
                       rows="5"
                       id="message1"
                     ></textarea>
@@ -363,6 +400,8 @@
             class="addcountry-career"
             id="openposition"
             enctype="multipart/form-data"
+            [formGroup]="applynowForm"
+            (ngSubmit)="addData()"
           >
             <div class="row">
               <div class="col-md-6">
@@ -372,15 +411,19 @@
                     type="text"
                     class="form-control"
                     id="name7"
+                    formControlName="fullname"
                     placeholder="Full Name*"
                     name="name"
                   />
-                  <input
-                    type="hidden"
-                    id="pagename"
-                    value="careers_position_name"
-                    name="pagename"
-                  />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      applynowForm.get('fullname')?.touched &&
+                      applynowForm.get('fullname')?.errors
+                    "
+                  >
+                    Full Name is Required
+                  </P>
                 </div>
               </div>
               <div class="col-md-6">
@@ -390,9 +433,19 @@
                     type="email"
                     class="form-control"
                     id="email7"
+                    formControlName="email"
                     placeholder="Email*"
                     name="email"
                   />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      applynowForm.get('email')?.touched &&
+                      applynowForm.get('email')?.errors
+                    "
+                  >
+                    Email is Required
+                  </P>
                 </div>
               </div>
               <div class="col-md-6">
@@ -403,9 +456,19 @@
                     type="text"
                     class="form-control"
                     id="company7"
+                    formControlName="previousCompany"
                     placeholder="Company*"
                     name="company"
                   />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      applynowForm.get('previousCompany')?.touched &&
+                      applynowForm.get('previousCompany')?.errors
+                    "
+                  >
+                    Company is Required
+                  </P>
                 </div>
               </div>
               <div class="col-md-6">
@@ -415,23 +478,46 @@
                     type="text"
                     class="form-control"
                     id="phone7"
+                    formControlName="mobile"
                     placeholder="Phone number*"
                     name="mobilenumber"
                   />
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      applynowForm.get('mobile')?.touched &&
+                      applynowForm.get('mobile')?.errors
+                    "
+                  >
+                    Mobile is Required
+                  </P>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="select7" class="select">SELECT JOB</label><br />
-                  <select class="form-control" id="select7" name="job1">
+                  <select
+                    formControlName="applyingFor"
+                    class="form-control"
+                    id="select7"
+                    name="job1"
+                  >
                     <option value="">-Select Job type-</option>
-                    <option>Linux Networking Developer</option>
-                    <option>Senior Linux + Networking</option>
-                    <option>Software Test Engineer</option>
-                    <option>FOTA Engineer JD</option>
-                    <option>Senior Networking Engineer. JD</option>
-                    <option>C/C++ Application Developer</option>
+                    <ng-container *ngFor="let item of careers; let i = index">
+                      <option [value]="item.jobTitle">
+                        {{ item.jobTitle }}
+                      </option>
+                    </ng-container>
                   </select>
+                  <P
+                    class="error-class contact-error-class"
+                    *ngIf="
+                      applynowForm.get('applyingFor')?.touched &&
+                      applynowForm.get('applyingFor')?.errors
+                    "
+                  >
+                    Job type is Required
+                  </P>
                 </div>
               </div>
               <div class="col-md-12">
@@ -444,9 +530,23 @@
                 <div class="form-group">
                   <div class="custom-file mb-3">
                     <!-- <label for="comment7" class="comment">UPLOAD RESUME</label> -->
-                    <input type="file" name="attach1" id="file7" />
+                    <input
+                      (change)="fileChange($event)"
+                      type="file"
+                      name="attach1"
+                      id="file7"
+                    />
                     <!-- <input type="file" class="custom-file-input" id="comment7" name="filename"> -->
                     <!-- <label class="custom-file-label" for="customFile7">Choose file</label> -->
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        applynowForm.get('file')?.touched &&
+                        applynowForm.get('file')?.errors
+                      "
+                    >
+                      Resume is Required
+                    </P>
                   </div>
                 </div>
               </div>

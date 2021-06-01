@@ -1,0 +1,189 @@
+<div class="modal" id="myModalsevices">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header
+             <div class="modal-header">
+             <h4 class="modal-title"></h4>
+
+             </div>
+             -->
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <button
+              id="dismiss"
+              type="button"
+              class="close"
+              data-dismiss="modal"
+            >
+              &times;
+            </button>
+            <div
+              class="
+                innobox-contactfrmcontainer innobox-contactfrmcontainer-right
+              "
+            >
+              <form
+                class="form-contact innoboxcontact-form addcountry6"
+                id="innoboxcontact-form-services"
+                [formGroup]="contactForm"
+                (ngSubmit)="addData()"
+              >
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="name-services">NAME</label>
+                    <input
+                      class="form-control"
+                      name="name"
+                      formControlName="name"
+                      id="name-services"
+                      type="text"
+                    />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('name')?.touched &&
+                        contactForm.get('name')?.errors
+                      "
+                    >
+                      Name is Required
+                    </P>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email-services">E-MAIL</label>
+                    <input
+                      class="form-control"
+                      name="email"
+                      formControlName="email"
+                      id="email-services"
+                      type="email"
+                    />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('email')?.touched &&
+                        contactForm.get('email')?.errors
+                      "
+                    >
+                      Email is Required
+                    </P>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="company-services">COMPANY</label>
+                    <input
+                      class="form-control"
+                      name="company"
+                      formControlName="company"
+                      id="company-services"
+                      type="text"
+                    />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('company')?.touched &&
+                        contactForm.get('company')?.errors
+                      "
+                    >
+                      Company is Required
+                    </P>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="mobilenumber-services">PHONE NUMBER</label>
+                    <input
+                      class="form-control"
+                      formControlName="phone"
+                      name="mobilenumber"
+                      id="mobilenumber-services"
+                      type="text"
+                    />
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('phone')?.touched &&
+                        contactForm.get('phone')?.errors
+                      "
+                    >
+                      Phone is Required
+                    </P>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="messageabout">What is your message about</label>
+                    <select
+                      formControlName="messagecat"
+                      class="form-control"
+                      id="messageabout"
+                      name="job2"
+                    >
+                      <option value="0">Select</option>
+                      <option>Sales</option>
+                      <option>Support</option>
+                    </select>
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('messagecat')?.touched &&
+                        contactForm.get('messagecat')?.errors
+                      "
+                    >
+                      Category is Required
+                    </P>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="message-services">Message</label>
+                    <textarea
+                      class="form-control"
+                      formControlName="message"
+                      name="message"
+                      rows="5"
+                      id="message-services"
+                    ></textarea>
+                    <P
+                      class="error-class contact-error-class"
+                      *ngIf="
+                        contactForm.get('message')?.touched &&
+                        contactForm.get('message')?.errors
+                      "
+                    >
+                      Message is Required
+                    </P>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-warning innoboxsubmit">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer
+             <div class="modal-footer">
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+             </div>
+             -->
+    </div>
+  </div>
+</div>
+<p class="internal-headersecp1">
+  <a
+    href="#"
+    class="internal-headersecp1a"
+    data-toggle="modal"
+    data-target="#myModalsevices"
+    >Ask for a Quote</a
+  >
+</p>

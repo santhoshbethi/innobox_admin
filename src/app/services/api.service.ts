@@ -45,4 +45,47 @@ export class ApiService {
       headers: this.headers,
     });
   }
+  getRecentWorkCat() {
+    return this.http.get(`${appConfig.apiUrl}rectwrks/getcat`, {
+      headers: this.headers,
+    });
+  }
+  getRecentWorkCatData() {
+    return this.http.get(`${appConfig.apiUrl}rectwrks/recentwroks`, {
+      headers: this.headers,
+    });
+  }
+  getRecentWorkSingleCatData(id: any) {
+    return this.http.post(
+      `${appConfig.apiUrl}rectwrks/recentwroksbyid`,
+      { id: id },
+      {
+        headers: this.headers,
+      }
+    );
+  }
+  applyNow(data: any) {
+    return this.http.post(`${appConfig.apiUrl}home/applynow`, data, {
+      headers: this.headers,
+    });
+  }
+  getAllServices() {
+    return this.http.get(`${appConfig.apiUrl}services/getservices`, {
+      headers: this.headers,
+    });
+  }
+  getServiceById(id: any) {
+    return this.http.post(
+      `${appConfig.apiUrl}services/getservicesbyid`,
+      { id: id },
+      {
+        headers: this.headers,
+      }
+    );
+  }
+  getAddress() {
+    return this.http.get(`${appConfig.apiUrl}cts/getaddress`, {
+      headers: this.headers,
+    });
+  }
 }
