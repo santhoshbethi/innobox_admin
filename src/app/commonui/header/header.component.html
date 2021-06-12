@@ -32,9 +32,12 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <!--  -->
       <ul class="ml-auto navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="{{ appConfig.routes.home }}">Home</a>
+        <li  *ngFor="let item of menu; let i = index" class="nav-item">
+          <a class="nav-link" routerLink="{{item.href}}">{{item.itemName}}</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="{{ appConfig.routes.home }}">Home</a>
+        </li> -->
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle pointer"
@@ -168,11 +171,11 @@
             </div>
           </div>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="{{ appConfig.routes.recentworks }}"
             >Recent Works</a
           >
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a
             class="nav-link"
@@ -181,7 +184,7 @@
             >Why Us?</a
           >
         </li> -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -196,7 +199,7 @@
             routerLink="{{ appConfig.routes.contactus }}"
             >Contact Us</a
           >
-        </li>
+        </li> -->
       </ul>
       <!--  -->
     </div>

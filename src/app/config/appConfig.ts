@@ -7,7 +7,8 @@ const appConfig = {
     career: 'career',
     contactus: 'contact-us',
     whyus: 'why-us',
-    home: '',
+    home: 'home',
+   
     // gryphion: 'gryphion',
     recentworkcat: 'recent-work-category',
     fiveg: '5g',
