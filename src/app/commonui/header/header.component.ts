@@ -7,7 +7,10 @@ import appConfig from '../../config/appConfig';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-  appConfig: any;
+  appConfigs: any =[];
+  appConfig:any;
+  objectKeys = Object.keys;
+
   constructor(public api: ApiService, public router: Router) {}
 
   ngOnInit(): void {
@@ -18,6 +21,8 @@ export class HeaderComponent implements OnInit {
   getAllMenu() {
     this.api.getMenu().subscribe((response) => {
       console.log(response);
+      this.appConfigs= response;
+      console.log(this.appConfigs);
     });
   }
   redirect(path: any) {

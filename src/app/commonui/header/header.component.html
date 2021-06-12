@@ -62,56 +62,25 @@
                     margin-bottom-mega-menu
                   "
                 >
-                  <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a
-                        class="nav-link mega-menu-service-h3"
-                        routerLink="{{ appConfig.routes.mainservice }}"
-                        >All Services
-                      </a>
+                  <ul class="nav flex-column" *ngFor="let menu of appConfigs.message; let i = index">
+                    <li class="nav-item" *ngIf= "menu.refID== 0">
+                      {{ menu.itemName }}
                     </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.networkstack }}"
-                        >Network Stack</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.fivegsolution }}"
-                        >5G Solutions</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.connectivity }}"
-                        >Connectivity (Networking)</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.linuxandroid }}"
-                        >Linux and Android</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.testingautomation }}"
-                        >Testing Automation</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        routerLink="{{ appConfig.routes.wirelesstechnology }}"
-                        >Wireless Technologies</a
-                      >
-                    </li>
+                    <!-- <mat-menu #main_menu="matMenu">
+                      <ng-container *ngFor="let mainItem of objectKeys(appConfigs)">
+                        <button mat-menu-item [matMenuTriggerFor]="sub_menu">{{ mainItem }}</button>
+                        <mat-menu #sub_menu="matMenu">
+                           <button *ngFor="let subItem of appConfigs[mainItem]" mat-menu-item>{{ subItem }}</button>
+                        </mat-menu>
+                      </ng-container>
+                    </mat-menu> -->
+
+                    <!-- <button mat-button [matMenuTriggerFor]="menu"  *ngIf= "menu.refID== 0" >{{ menu.itemName }}
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>menu.itemName</button>
+                    </mat-menu> -->
+
                   </ul>
                 </div>
 
