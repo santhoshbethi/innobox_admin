@@ -9,6 +9,7 @@ import appConfig from '../../config/appConfig';
 export class HeaderComponent implements OnInit {
   appConfigs: any =[];
   appConfig:any;
+  menu:any;
   objectKeys = Object.keys;
 
   constructor(public api: ApiService, public router: Router) {}
@@ -19,10 +20,14 @@ export class HeaderComponent implements OnInit {
   }
 
   getAllMenu() {
-    this.api.getMenu().subscribe((response) => {
-      console.log(response);
-      this.appConfigs= response;
-      console.log(this.appConfigs);
+    this.api.getSubMenu().subscribe((response) => {
+      let res = JSON.parse(JSON.stringify(response));
+      if (res.message) {
+        console.log(response);
+        this.menu = res.message;
+      } else {
+      }
+  
     });
   }
   redirect(path: any) {

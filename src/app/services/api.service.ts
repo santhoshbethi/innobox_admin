@@ -11,6 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   //GET APIs
+  
 
   getMenu() {
     return this.http.get(`${appConfig.apiUrl}home/menu`, {
@@ -36,6 +37,11 @@ export class ApiService {
 
   addHomeContact(data: any) {
     return this.http.post(`${appConfig.apiUrl}home/hmpcontactus`, data, {
+      headers: this.headers,
+    });
+  }
+  getSubMenu() {
+    return this.http.get(`${appConfig.apiUrl}home/homemenu`, {
       headers: this.headers,
     });
   }
