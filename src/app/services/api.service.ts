@@ -94,4 +94,10 @@ export class ApiService {
       headers: this.headers,
     });
   }
+
+  getServiceHighlightById(id:any){
+    return this.http.post(`${appConfig.apiUrl}services/getserviceshighlights`, id, {
+      headers: this.headers,
+    });
+  }
 }

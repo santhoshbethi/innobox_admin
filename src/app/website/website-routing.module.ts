@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import appConfig from '../config/appConfig';
+import { ServicesComponent } from '../services/services.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { AiComponent } from './ai/ai.component';
 import { AutomationtestappComponent } from './automationtestapp/automationtestapp.component';
@@ -50,6 +51,12 @@ const routes: Routes = [
   { path: appConfig.routes.mobileapps, component: MobileappsComponent },
   { path: appConfig.routes.recentworks, component: RecentworksComponent },
   { path: appConfig.routes.mainservice, component: MainserviceComponent },
+  { path: appConfig.routes.mainservice, component: MainserviceComponent },
+
+  {
+    path: appConfig.routes.service + '/:id',
+    component: ServicesComponent,
+  },
   {
     path: appConfig.routes.singleservice + '/:id',
     component: NetworkstackComponent,

@@ -17,6 +17,7 @@ const appConfig = {
     mobileapps: 'mobile-apps',
     recentworks: 'recent-work',
     mainservice: 'services',
+    service: 'service',
     // networkstack: 'network-stack',
     singleservice: 'service',
     fivegsolution: '5g-solution',
