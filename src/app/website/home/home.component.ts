@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import * as $ from 'jquery';
 import appConfig from 'src/app/config/appConfig';
 import { ApiService } from 'src/app/services/api.service';
+declare const myTest: any;
 import SwiperCore, {
   A11y,
   Autoplay,
@@ -55,6 +56,53 @@ export class HomeComponent implements OnInit {
     this.getCategory();
     this.getAllCatData();
     this.getAddress();
+    myTest([
+      {
+        src: {
+          main: "../../../assets/img/slider-img1.jpg",
+          cover:"../../../assets/img/slider-img1.jpg",
+          
+        },
+        title: "Intelligent",
+        desc: "Connected Devices for <br>" + "next-gen Networking",
+        button: {
+          text: "Know More",
+          url: "services/",
+          class: "btn btn-medium mainhead-btnknowmore diplaygone",
+          
+        },
+      },
+      {
+        src: {
+          main: "../../../assets/img/gryphon-change.jpg",
+          cover:
+            "../../../assets/img/gryphon-change.jpg",
+        },
+        title: "We Deliver",
+        desc: "Tech that Redefines how your IT works ",
+        button: {
+          text: "Know More",
+          url: "services/",
+          class: "btn btn-medium  mainhead-btnknowmore diplaygone",
+          
+        },
+      },
+      {
+        src: {
+          main: "../../../assets/img/gryphon-change.jpg",
+          cover:
+            "../../../assets/img/gryphon-change.jpg",
+        },
+        title: "Road Traffic",
+        desc: "Intelligence Delivered <br>" + "with Accuracy ",
+        button: {
+          text: "Know More",
+          url: "services/",
+          class: "btn btn-medium  mainhead-btnknowmore diplaygone",
+        
+        },
+      },
+    ]);
   }
 
   getAddress() {
@@ -149,4 +197,6 @@ export class HomeComponent implements OnInit {
       this.categories = res.message;
     });
   }
+  
 }
+  

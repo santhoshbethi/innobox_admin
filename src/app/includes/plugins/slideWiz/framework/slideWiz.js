@@ -115,45 +115,29 @@ $.fn.slideWiz = function (e) {
     }
     if (object.file[position].button !== false) {
       if (object.file[position].button.url !== false) {
-        detail_box.append(
-          $("<a>")
-            .attr({ href: object.file[position].button.url, target: "_parent" })
-            .html(
-              $("<button>")
-                .attr({
-                  class:
-                    "detail-button " +
-                    (object.file[position].button.class !== false
-                      ? object.file[position].button.class
-                      : ""),
-                  style:
-                    object.file[position].button.color !== false
-                      ? "color: " + object.file[position].button.color
-                      : "",
-                })
-                .html(object.file[position].button.text)
-            )
-        );
+          detail_box.append(
+              $('<a>').attr({'href': object.file[position].button.url, 'target': '_parent'}).html(
+                  $('<button>').attr({
+                      class: "detail-button " + (object.file[position].button.class !== false ?
+                          object.file[position].button.class : ""),
+                      style: (object.file[position].button.color !== false ? "color: " +
+                          object.file[position].button.color : "")
+                  }).html(object.file[position].button.text)
+              )
+          );
       } else {
-        detail_box.append(
-          $("<button>")
-            .attr({
-              class:
-                "detail-button " +
-                (object.file[position].button.class !== false
-                  ? object.file[position].button.class
-                  : ""),
-              style:
-                object.file[position].button.color !== false
-                  ? "color: " + object.file[position].button.color
-                  : "",
-            })
-            .html(object.file[position].button.text)
-        );
+          detail_box.append(
+              $('<button>').attr({
+                  class: "detail-button " + (object.file[position].button.class !== false ?
+                      object.file[position].button.class : ""),
+                  style: (object.file[position].button.color !== false ? "color: " +
+                      object.file[position].button.color : "")
+              }).html(object.file[position].button.text)
+          );
       }
-    }
-    return detail_box.children();
-  };
+  }
+  return detail_box.children();
+};
 
   /**
    *

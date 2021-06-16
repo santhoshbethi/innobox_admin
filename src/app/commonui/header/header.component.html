@@ -1,71 +1,68 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top wow fadeInDown" id="mainNav">
-	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" routerLink="{{ appConfig.routes.home }}">
-			<img src="../../../assets/img/innoboxlogo.svg" alt="innobox logo" class="gbitlogo" />
-		</a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-			data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<div class="container-hamburg" onclick="myFunction(this)">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-			<i class="fa fa-bars"></i>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
+   <div class="container">
+      <a class="navbar-brand js-scroll-trigger" routerLink="{{ appConfig.routes.home }}">
+         <img src="../../../assets/img/innoboxlogo.svg" alt="innobox logo" class="gbitlogo" />
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+         aria-label="Toggle navigation">
+         <div class="container-hamburg" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+         </div>
+         <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
 
-			<ul class="ml-auto navbar-nav">
-				<div *ngFor="let item of menu; let i = index">
+         <ul class="ml-auto navbar-nav">
+            <div *ngFor="let item of menu; let i = index">
+               <li *ngIf="item.children.length == 0" class="nav-item">
+                  <a class="nav-link" routerLink="{{item.href}}">{{item.itemName}}</a>
+               </li>
 
-					<li *ngIf="item.children.length == 0" class="nav-item">
-						<a class="nav-link" routerLink="{{item.href}}">{{item.itemName}}</a>
-					</li>
-					<li *ngIf="item.children.length > 0" class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle pointer" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">{{item.itemName}}</a>
-						<div class="dropdown-menu" id="dropdown-menu-id"
-							aria-labelledby="navbarDropdown">
-							<div class="container">
+               <li *ngIf="item.children.length > 0" class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle pointer" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">{{item.itemName}}</a>
 
-								<div class="row">
-									<div class="
-                  col-md-4
-                  mega-menu-service-bg-container-two-col
-                  row-padding
-                  margin-bottom-mega-menu
-                ">
-										<div
-											*ngFor="let sub of item.children; let i = index">
-											<ul class="nav flex-column">
-												<li *ngIf="sub.children.length == 0"
-													class="nav-item">
-													<a class="nav-link"
-														routerLink="{{sub.href}}">{{sub.itemName}}</a>
-												</li>
-												<li *ngIf="sub.children.length > 0"
-													class="nav-item dropdown">
-													<a class="nav-link dropdown-toggle pointer"
-														id="navbarDropdown"
-														role="button"
-														data-toggle="dropdown"
-														aria-haspopup="true"
-														aria-expanded="false">{{sub.itemName}}</a>
-											</ul>
-										</div>
-									</div>
+                  <div class="dropdown-menu" id="dropdown-menu-id"
+                     aria-labelledby="navbarDropdown">
+                   
+                        <!--<div class="row"><div class="up-arrow"></div></div>-->
 
+                        <div *ngFor="let sub of item.children; let i = index" class="childs">
+                           <ul class="nav flex-column">
+                              <li *ngIf="sub.children.length == 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
+                                 <a class="nav-link" routerLink="{{sub.href}}">{{sub.itemName}}</a>
+                              </li>
+                              <li *ngIf="sub.children.length > 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item dropdown">
+                                 <a class="nav-link  pointer" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">{{sub.itemName}}</a>
+                                    <div class="dropdown-menu-sub"  id="dropdown-menu-id"
+                                    aria-labelledby="navbarDropdown">
+                                  
+                                       <!--<div class="row"><div class="up-arrow"></div></div>-->
+               
+                                       <div *ngFor="let subchild of sub.children; let i = index">
+                                          <ul class="nav flex-column">
+                                             <li  class="nav-item" style="border-bottom: 1px  solid #f0f0f0;">
+                                                <a class="nav-link" routerLink="{{subchild.href}}">{{subchild.itemName}}</a>
+                                             </li>
+                                             
+                                          </ul>
+                                       </div>
+                                  
+                                 </div> 
+                              </li>
+                           </ul>
+                        </div>
+                   
+                  </div> 
+               </li>
+            </div>
+         </ul>
 
-								</div>
-							</div>
-						</div>
-					</li>
-				</div>
-			</ul>
-
-
-
-		</div>
-	</div>
+      </div>
+   </div>
 </nav>
