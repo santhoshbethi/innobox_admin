@@ -13248,17 +13248,20 @@ table,
   background-color: #ffffff !important;
   border-radius: 5px;
   position: absolute !important;
-  display: none;
+ 
   left: 100%;
   margin-top: -20px;
   
   position: relative;
-  margin-left: 3px;
+  margin-left: 1px;
   
 }
-a:hover + div {
-  display: block;
-}
+
+
+
+
+
+
 
 .mega-menu-service-h3 {
   color: #ff0000;
@@ -14485,6 +14488,8 @@ a.internal-headersecp1a {
 
 .servicedetails-sec {
   padding: 75px 0;
+  word-break: break-all;
+
 }
 
 .whyinnoboxdiv1-h2 {

@@ -3,6 +3,7 @@
       <a class="navbar-brand js-scroll-trigger" routerLink="{{ appConfig.routes.home }}">
          <img src="../../../assets/img/innoboxlogo.svg" alt="innobox logo" class="gbitlogo" />
       </a>
+     
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
          aria-label="Toggle navigation">
@@ -35,19 +36,17 @@
                               <li *ngIf="sub.children.length == 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
                                  <a class="nav-link" routerLink="{{sub.href}}">{{sub.itemName}}</a>
                               </li>
-                              <li *ngIf="sub.children.length > 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item dropdown">
-                                 <a class="nav-link  pointer" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">{{sub.itemName}}</a>
-                                    <div class="dropdown-menu-sub"  id="dropdown-menu-id"
-                                    aria-labelledby="navbarDropdown">
+                              <li *ngIf="sub.children.length > 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item dropdown testt">
+                                 <a class="nav-link  pointer" 
+                                    >{{sub.itemName}}</a>
+                                    <div class="dropdown-menu-sub">
                                   
                                        <!--<div class="row"><div class="up-arrow"></div></div>-->
                
                                        <div *ngFor="let subchild of sub.children; let i = index">
                                           <ul class="nav flex-column">
                                              <li  class="nav-item" style="border-bottom: 1px  solid #f0f0f0;">
-                                                <a class="nav-link" routerLink="{{subchild.href}}">{{subchild.itemName}}</a>
+                                                <a class="nav-link" routerLink="service/{{subchild.href}}">{{subchild.itemName}}</a>
                                              </li>
                                              
                                           </ul>
