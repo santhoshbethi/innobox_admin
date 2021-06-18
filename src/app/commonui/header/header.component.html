@@ -34,19 +34,16 @@
                         <div *ngFor="let sub of item.children; let i = index" class="childs">
                            <ul class="nav flex-column">
                               <li *ngIf="sub.children.length == 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
-                                 <a class="nav-link" routerLink="{{sub.href}}">{{sub.itemName}}</a>
+                                 <a class="nav-link" routerLink="service/{{sub.ID}}">{{sub.itemName}}</a>
                               </li>
                               <li *ngIf="sub.children.length > 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item dropdown testt">
                                  <a class="nav-link  pointer" 
                                     >{{sub.itemName}}</a>
                                     <div class="dropdown-menu-sub">
-                                  
-                                       <!--<div class="row"><div class="up-arrow"></div></div>-->
-               
-                                       <div *ngFor="let subchild of sub.children; let i = index">
+                                     <div *ngFor="let subchild of sub.children; let i = index">
                                           <ul class="nav flex-column">
                                              <li  class="nav-item" style="border-bottom: 1px  solid #f0f0f0;">
-                                                <a class="nav-link" routerLink="service/{{subchild.href}}">{{subchild.itemName}}</a>
+                                                <a class="nav-link" routerLink="service/{{subchild.ID}}">{{subchild.itemName}}</a>
                                              </li>
                                              
                                           </ul>

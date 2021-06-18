@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from './api.service';
+declare const test: any;
 
 @Component({
   selector: 'app-services',
@@ -18,6 +19,7 @@ export class ServicesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.id = this.route.snapshot.params['id'];
     this.getHighlights(this.id);
 
@@ -27,6 +29,8 @@ export class ServicesComponent implements OnInit {
      }, error => {
        console.log("error");
      });
+     test();
+     
   }
 
   getHighlights(id: number){

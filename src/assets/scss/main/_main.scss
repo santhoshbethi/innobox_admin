@@ -13248,7 +13248,7 @@ table,
   background-color: #ffffff !important;
   border-radius: 5px;
   position: absolute !important;
- 
+  display: none;
   left: 100%;
   margin-top: -20px;
   
@@ -13257,8 +13257,18 @@ table,
   
 }
 
+.childs:hover{
+  background: #f1f1f1;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+ 
+}
 
-
+.childs:hover ul li .dropdown-menu-sub{
+  
+  display:block;
+}
 
 
 

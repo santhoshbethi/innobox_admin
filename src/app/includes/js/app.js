@@ -13412,6 +13412,7 @@ $(document).ready(function () {
   // $('.whyinnoboxdiv2').parallax({src: 'img/whyinnoboxbgg.jpg'});
 
   $(".inner-iot").parallax({ src: "img/iot-fnl.jpg" });
+  $(".parallax").parallax({ src: "img/cloudapps-fnl.jpg" });
   $(".inner-cloudapps").parallax({ src: "img/cloudapps-fnl.jpg" });
   $(".inner-wifi6").parallax({ src: "img/wifi-fnl.jpg" });
   $(".inner-5gsolution").parallax({ src: "img/5g-fnl.jpg" });
@@ -14855,11 +14856,7 @@ $(document).ready(function () {
   });
 
   // document ready
-  $(".testt").hover(function(){
-    $(".dropdown-menu-sub").css("display", "block");
-    }, function(){
-    $(".dropdown-menu-sub").css("display", "none");
-  });
+
 });
 
 
