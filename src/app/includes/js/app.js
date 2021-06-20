@@ -13411,7 +13411,7 @@ $(document).ready(function () {
   $(".employeeimgeleimg").parallax({ src: "img/empbk.jpg" });
   // $('.whyinnoboxdiv2').parallax({src: 'img/whyinnoboxbgg.jpg'});
 
-  $(".inner-iot").parallax({ src: "img/iot-fnl.jpg" });
+  $(".inner-iot").parallax({ src: "../../img/connectivity-service.jpg" });
   $(".parallax").parallax({ src: "img/cloudapps-fnl.jpg" });
   $(".inner-cloudapps").parallax({ src: "img/cloudapps-fnl.jpg" });
   $(".inner-wifi6").parallax({ src: "img/wifi-fnl.jpg" });

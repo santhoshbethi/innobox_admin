@@ -29,7 +29,7 @@ export class ServicesComponent implements OnInit {
      }, error => {
        console.log("error");
      });
-     test();
+   
      
   }
 

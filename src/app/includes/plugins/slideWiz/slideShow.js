@@ -12,9 +12,4 @@ function myTest(id) {
 
  
 }
-function test()
-{
-  
- $("#parallax").parallax({ src: "imcloudapps-fnl.jpg" });
- console.log(some);
-}
+

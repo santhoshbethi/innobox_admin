@@ -38,6 +38,7 @@ import { WifisolutionComponent } from './wifisolution/wifisolution.component';
 import { WirelesstechnologyComponent } from './wirelesstechnology/wirelesstechnology.component';
 const routes: Routes = [
   { path: appConfig.routes.home, component: HomeComponent },
+  { path: appConfig.routes.def, component: HomeComponent },
   { path: appConfig.routes.career, component: CareerComponent },
   { path: appConfig.routes.contactus, component: ContactusComponent },
   { path: appConfig.routes.whyus, component: WhyusComponent },

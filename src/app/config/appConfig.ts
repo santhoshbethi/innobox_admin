@@ -8,6 +8,7 @@ const appConfig = {
     contactus: 'contact-us',
     whyus: 'why-us',
     home: 'home',
+    def:'',
    
     // gryphion: 'gryphion',
     recentworkcat: 'recent-work-category',
