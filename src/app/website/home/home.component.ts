@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import appConfig from 'src/app/config/appConfig';
 import { ApiService } from 'src/app/services/api.service';
 declare const myTest: any;
+declare const test: any;
 import SwiperCore, {
   A11y,
   Autoplay,
@@ -56,6 +57,7 @@ export class HomeComponent implements OnInit {
     this.getCategory();
     this.getAllCatData();
     this.getAddress();
+   
     myTest([
       {
         src: {

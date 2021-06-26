@@ -13356,7 +13356,9 @@
 });
 //hamburg-icon
 function myFunction(x) {
+  console.log(x.classList);
   x.classList.toggle("change");
+  
 }
 $(document).ready(function () {
   $("#navbarDropdown").click(function () {
@@ -13367,6 +13369,7 @@ $(document).ready(function () {
   // menubar
   // Closes responsive menu when a scroll trigger link is clicked
   $(".js-scroll-trigger").click(function () {
+  
     $(".navbar-collapse").collapse("hide");
   });
 
@@ -13411,8 +13414,8 @@ $(document).ready(function () {
   $(".employeeimgeleimg").parallax({ src: "img/empbk.jpg" });
   // $('.whyinnoboxdiv2').parallax({src: 'img/whyinnoboxbgg.jpg'});
 
-  $(".inner-iot").parallax({ src: "../../img/connectivity-service.jpg" });
-  $(".parallax").parallax({ src: "img/cloudapps-fnl.jpg" });
+  // $(".inner-iot").parallax({ src: "../../img/connectivity-service.jpg" });
+ 
   $(".inner-cloudapps").parallax({ src: "img/cloudapps-fnl.jpg" });
   $(".inner-wifi6").parallax({ src: "img/wifi-fnl.jpg" });
   $(".inner-5gsolution").parallax({ src: "img/5g-fnl.jpg" });
@@ -13438,7 +13441,7 @@ $(document).ready(function () {
     "use strict";
     // Auto-scroll
     $("#customerCarousel").carousel({
-      interval: 5000,
+      interval: 500,
     });
 
     // Control buttons
@@ -14811,23 +14814,7 @@ $(document).ready(function (e) {
 //     });
 // });
 
-$(document).ready(function () {
-  // logo slider - start
-  $("#logoParade").smoothDivScroll({
-    autoScrollingMode: "always",
-    autoScrollingDirection: "endlessLoopRight",
-    autoScrollingStep: 1,
-    autoScrollingInterval: 25,
-  });
-  // Logo parade event handlers
-  $("#logoParade")
-    .bind("mouseover", function () {
-      $(this).smoothDivScroll("stopAutoScrolling");
-    })
-    .bind("mouseout", function () {
-      $(this).smoothDivScroll("startAutoScrolling");
-    });
-});
+
 
 $(document).ready(function () {
   // executes when HTML-Document is loaded and DOM is ready

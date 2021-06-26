@@ -1,6 +1,7 @@
 <!--  -->
 <!-- internalheader-start -->
-<section class="internal-headersec-contectivity wow fadeInUp" *ngFor="let items of res">
+<section class="internal-headersec-contectivity wow fadeInUp"  *ngFor="let items of res"  [ngStyle]="{background: 'url('+appConfig.imageUrl + items.image1+ ')'}">
+    
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -39,12 +40,16 @@
                 </div>
 
                 
-
+                <div  class="whyinnoboxdiv2"   [ngStyle]="{background: 'url('+appConfig.imageUrl + items.image2+ ')'}"> 
+      
+       
+                </div>
             </div>
             <div class="col-md-3 wow fadeInRight">
                 <h3 class="highlights-h3">Highlights</h3>
 
-                <div class="highlights-li"  *ngFor="let values of highlightValues">
+                <div class="highlights-li"  *ngFor="let values of highlightValues;let i = index">
+                    <h3 class="highlights-lih3">0{{i+1}}</h3>
                     <p class="highlights-lip1">
                         {{values.cntnt}}
                     </p>
@@ -53,62 +58,30 @@
             </div>
         </div>
     </div>
-</section>
-<div class="whyinnoboxdiv2 inner-iot"></div>
+    
+</section> 
+
 
 <!-- why innobox - end -->
 <!-- our other services - start -->
+
+<!-- our other services - end -->
 <section class="otherservices-sec wow fadeInUp">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" >
                 <h3 class="otherservices-h3">Our Other Services</h3>
                 <div class="otherservices-contextbox">
                     <div class="row">
-                        <div class="col-md-4">
-                            <a href="portable-devices.html">
+                        <div class="col-md-4"  *ngFor="let items of otherServices">
+                            <a href="/#/service/{{items.ID}}">
                                 <div class="otherservices-box">
-                                    <img src="../../../assets/img/portable-fnl2.jpg" alt="other services"
+                                    <img [src]="appConfig.imageUrl + items.image1" style="min-width:280px;min-height:184px;max-width: 280px; max-height: 184px;" alt="other services"
                                         class="otherservices-img" />
                                     <div class="otherservices-boxdiv">
-                                        <h3 class="otherservices-boxdivh3">Portable Devices</h3>
+                                        <h3 class="otherservices-boxdivh3">{{items.title}}</h3>
                                         <p class="otherservices-boxdivp">
-                                            We use service delivery accelerators to redefine the
-                                            boundaries of wireless gadgets by integrating high ....
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4">
-                            <a href="linux-and-android.html">
-                                <div class="otherservices-box">
-                                    <img src="../../../assets/img/linux-3.jpg" alt="other services"
-                                        class="otherservices-img" />
-                                    <div class="otherservices-boxdiv">
-                                        <h3 class="otherservices-boxdivh3">Linux and Android</h3>
-                                        <p class="otherservices-boxdivp">
-                                            We develop agile integration of Linux & Android products
-                                            based on open-source OS, middleware, drivers, kernel,
-                                            boot-loader,...
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4">
-                            <a href="testing-automation.html">
-                                <div class="otherservices-box">
-                                    <img src="../../../assets/img/testing-fnl2.jpg" alt="other services"
-                                        class="otherservices-img" />
-                                    <div class="otherservices-boxdiv">
-                                        <h3 class="otherservices-boxdivh3">Testing Automation</h3>
-                                        <p class="otherservices-boxdivp">
-                                            We help determine the best testing solutions and
-                                            frameworks for test automation, data integrity checks and
-                                            other QA....
+                                          {{items.shdcr}}
                                         </p>
                                     </div>
                                 </div>
@@ -120,11 +93,14 @@
         </div>
     </div>
 </section>
+
+
+                  
 <!-- our other services - end -->
 <section class="experience-sec wow fadeInUp">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12"  >
                 <h2 class="experience-h2">Have you tried innobox?</h2>
                 <p class="experience-p">
                     Great things come in small packages. Innobox delivers excellence using

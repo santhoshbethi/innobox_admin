@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 import { ApiService } from './api.service';
+import appConfig from 'src/app/config/appConfig';
 declare const test: any;
 
 @Component({
@@ -12,32 +14,50 @@ export class ServicesComponent implements OnInit {
   id: any;
   res: any;
   highlightValues:any;
-
+  otherServices:any;
+  appConfig: any;
   constructor(
+    @Inject(DOCUMENT) private _document: Document,
     private route: ActivatedRoute,
     public api: ApiService,
   ) { }
+ 
 
   ngOnInit(): void {
     
-    this.id = this.route.snapshot.params['id'];
+    
+this.route.params.subscribe(routeParams => {
+  this.id = this.route.snapshot.params['id'];
+   
     this.getHighlights(this.id);
-
+    this.getOtherservices(this.id);
+this.appConfig=appConfig;
     this.api.getServiceById(this.id).subscribe((response: any) => {
       this.res = response.message[0].maindata;
-      console.log(this.res);
+    
      }, error => {
        console.log("error");
      });
+    });
    
-     
+
   }
 
   getHighlights(id: number){
     const formatData = this.formatData(this.id);
     this.api.getServiceHighlightById({"id":this.id}).subscribe((response: any) => {
       this.highlightValues = response.message;
-      console.log(this.res);
+      
+     }, error => {
+       console.log("error");
+     });
+  }
+  getOtherservices(id:number)
+  {
+    const formatData = this.formatData(this.id);
+    this.api.getOtherservices({"id":this.id}).subscribe((response: any) => {
+      this.otherServices = response.message;
+      console.log(this.otherServices);
      }, error => {
        console.log("error");
      });

@@ -79,48 +79,34 @@
 <section class="innobox-logoslide-sec wow fadeIn">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <!--  -->
-        <swiper
-          [slidesPerView]="6"
-          [spaceBetween]="50"
-          [navigation]="true"
-          [effect]="'fade'"
-          [autoplay]="true"
-        >
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/nytec1.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/intel1.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/inseego2.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/easycare.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/covidio2.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/novatel-wirless1.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/wallflower1.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/apco1.png" alt=""
-          /></ng-template>
-          <ng-template swiperSlide
-            ><img src="../../../assets/img/critical1.png" alt=""
-          /></ng-template>
-        </swiper>
-
-        <!--  -->
-      </div>
+        <div class="col-md-12">
+            <!--  -->
+            <div id="logoParade">
+              <img class="logoParade-img" src="../../../assets/img/nytec1.png" alt=""
+              />
+              <img class="logoParade-img" src="../../../assets/img/intel1.png" alt=""
+              />
+              <img class="logoParade-img" src="../../../assets/img/inseego2.png" alt=""
+              />
+              <img class="logoParade-img" src="../../../assets/img/easycare.png" alt=""
+              />
+              <img class="logoParade-img" src="../../../assets/img/covidio2.png" alt=""
+              />
+              <img class="logoParade-img"src="../../../assets/img/novatel-wirless1.png" alt=""
+              />
+              <img class="logoParade-img"src="../../../assets/img/wallflower1.png" alt=""
+              />
+              <img class="logoParade-img"src="../../../assets/img/apco1.png" alt=""
+              />
+              <img class="logoParade-img"src="../../../assets/img/critical1.png" alt=""
+              />
+    
+                <!-- <img class="logoParade-img" src="img/austraffic1.png" alt="Demo image" /> -->
+            </div>
+            <!--  -->
+        </div>
     </div>
-  </div>
+</div>
 </section>
 <!-- logo - slide - end -->
 <!-- recent work - start -->
@@ -561,6 +547,9 @@
                       item.phoneNumber
                     }}</a>
                   </p>
+                 
+                </ng-container>
+                <ng-container *ngFor="let item of address; let i = index">
                   <p *ngIf="i === 0" class="contact-sec-p1">
                     <img
                       src="../../../assets/img/mailicon.svg"

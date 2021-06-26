@@ -1,3 +1,6 @@
+import { HttpHeaders } from '@angular/common/http';
+
 export const environment = {
-  production: true
+  production: false,
+  headers: new HttpHeaders().set('accept', 'application/json'),
 };

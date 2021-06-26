@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import appConfig from '../../config/appConfig';
+declare const navbarfun:any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.appConfig = appConfig;
     this.getAllMenu();
+   
   }
 
   getAllMenu() {
@@ -30,6 +32,16 @@ export class HeaderComponent implements OnInit {
   
     });
   }
+   myFunction(x:any) {
+        x.classList.toggle("change");
+  }
+
+  clickEvent(){
+    alert();
+    (<any>$(".navbar-collapse")).removeClass("show");
+  }
+
+
   redirect(path: any) {
     console.log(path);
 

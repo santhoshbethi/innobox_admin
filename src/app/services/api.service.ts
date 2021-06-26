@@ -100,4 +100,10 @@ export class ApiService {
       headers: this.headers,
     });
   }
+  getOtherservices(id:any)
+  {
+    return this.http.post(`${appConfig.apiUrl1}services/getotherservices`, id, {
+      headers: this.headers,
+    });
+  }
 }
