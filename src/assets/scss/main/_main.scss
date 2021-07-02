@@ -186,7 +186,7 @@ h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 abbr[title],
@@ -13243,6 +13243,7 @@ table,
   right: auto;
   margin-top: -30px !important;
 }
+@media only screen and (min-width: 600px) {
 .dropdown-menu-sub {
   border: none;
   background-color: #ffffff !important;
@@ -13255,6 +13256,22 @@ table,
   position: relative;
   margin-left: 1px;
   
+}
+}
+@media only screen and (max-width: 600px) {
+  .dropdown-menu-sub {
+    border: none;
+    background-color: #ffffff !important;
+    border-radius: 5px;
+    position: absolute !important;
+    display: none;
+   
+    margin-top: -20px;
+    
+    position: relative;
+    margin-left: 1px;
+    
+  }
 }
 
 .childs:hover{
@@ -13915,6 +13932,11 @@ a.innobox-what-pa {
 .contact-sec-p1 {
   font-size: 16px;
   color: #969696;
+ 
+}
+.contact-sec-phone {
+  font-size: 16px;
+  color: #969696;
   margin-bottom: 30px;
 }
 
@@ -14098,6 +14120,7 @@ a.contact-seca1 {
   color: #ffffff;
   font-size: 20px;
   max-width: 500px;
+  word-break: normal;
   font-weight: 300;
 }
 
@@ -14434,6 +14457,7 @@ a.leadership-secpa {
 .servicedetails-p {
   color: #31475e;
   font-size: 22px;
+  word-break: normal;
 }
 
 .servicedetails-p span {
@@ -14533,6 +14557,7 @@ a.internal-headersecp1a {
   color: #454545;
   font-size: 16px;
   font-weight: 300;
+  word-break: normal;
   margin-bottom: 25px;
   line-height: 30px;
 }
@@ -14690,8 +14715,8 @@ a.internal-headersecp1a {
 .innoboxsubmit {
   font-weight: 400;
   color: #ffffff;
-  background-color: #ff574a;
-  border-color: #ff574a;
+  background-color: #ff574a !important;
+  border-color: #ff574a !important;
   border-radius: 5px;
 }
 
@@ -15176,6 +15201,7 @@ button:focus {
 }
 
 .about-project-p {
+  word-break: normal;
   font-size: 23px;
   color: #141414;
   letter-spacing: 0;
@@ -15185,6 +15211,7 @@ button:focus {
 }
 
 .about-project-p1 {
+  word-break: normal;
   color: #212121;
   font-size: 16px;
   font-weight: 400;

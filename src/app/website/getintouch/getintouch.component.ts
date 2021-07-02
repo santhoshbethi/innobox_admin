@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class GetintouchComponent implements OnInit {
   contactForm: FormGroup;
+  display='none';
   constructor(
     private _fb: FormBuilder,
     private api: ApiService,
@@ -34,7 +35,7 @@ export class GetintouchComponent implements OnInit {
           action: 'X',
           class: 'green-snackbar',
         };
-        this.openSnackbar(data);
+        this.display='block';
         $('#dismiss').trigger('click');
         this.contactForm.reset();
       });
@@ -52,5 +53,9 @@ export class GetintouchComponent implements OnInit {
       duration: 5000,
       panelClass: [data.class],
     });
+  }
+  closemodal()
+  {
+    this.display='none';
   }
 }

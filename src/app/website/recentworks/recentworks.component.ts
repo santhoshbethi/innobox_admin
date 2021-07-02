@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import appConfig from 'src/app/config/appConfig';
+import {Title} from "@angular/platform-browser";
 import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-recentworks',
   templateUrl: './recentworks.component.html',
 })
 export class RecentworksComponent implements OnInit {
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private titleService:Title) {
+    this.titleService.setTitle("Innobox: Latest Work of Innobox");
+  }
   appConfig: any;
   categories: any;
   catData: any;

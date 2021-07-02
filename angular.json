@@ -38,9 +38,7 @@
               "node_modules/swiper/swiper-bundle.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js",
+           
               "src/app/includes/js/app.js",
               "src/app/includes/js/custom.js",
               "src/app/includes/plugins/jquery-ui-1.10.3.custom.min.js",

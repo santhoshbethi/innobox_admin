@@ -4629,7 +4629,7 @@
       accepts: {
         "*": $t,
         text: "text/plain",
-        html: "text/html",
+        html: "html",
         xml: "application/xml, text/xml",
         json: "application/json, text/javascript",
       },

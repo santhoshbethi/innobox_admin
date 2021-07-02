@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import appConfig from 'src/app/config/appConfig';
 import { ApiService } from 'src/app/services/api.service';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-career',
@@ -15,8 +16,10 @@ export class CareerComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private api: ApiService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private titleService:Title
   ) {
+    this.titleService.setTitle("Innobox: Career");
     this.applynowForm = this._fb.group({
       fullname: ['', Validators.required],
       email: ['', Validators.required],
@@ -58,6 +61,7 @@ export class CareerComponent implements OnInit {
     this.applynow1Form.get('applyingFor')?.setValue(title);
     this.api.getCareerById(id).subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
+      console.log(res);
       if (res.message) {
         this.careerbyid = res.message;
       } else {

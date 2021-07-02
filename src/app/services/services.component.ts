@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { ApiService } from './api.service';
 import appConfig from 'src/app/config/appConfig';
+import {Title} from "@angular/platform-browser";
 declare const test: any;
 
 @Component({
@@ -20,7 +21,10 @@ export class ServicesComponent implements OnInit {
     @Inject(DOCUMENT) private _document: Document,
     private route: ActivatedRoute,
     public api: ApiService,
-  ) { }
+    private titleService:Title
+  ) {
+    this.titleService.setTitle("Innobox: Services");
+   }
  
 
   ngOnInit(): void {

@@ -52,7 +52,7 @@
 
       <div class="col-md-3">
         <div class="what-stacks">
-          <h4 class="what-stacks-h4 fig-number">80</h4>
+          <h4 class="what-stacks-h4 fig-number">150</h4>
           <p class="what-stacks-p">Employees</p>
         </div>
       </div>
@@ -537,16 +537,26 @@
                       src="../../../assets/img/placeholder.svg"
                       class="contactformhome-icon"
                     />
+                 
                     &nbsp;<span class="contact-place">{{
                       item.locationName
-                    }}</span>
-                    <br />
-                    {{ item.locationAddress }}<br />
+                    }}
+                  {{item.locationCountry}}</span>
+                </p>
+                <p class="contact-sec-p1"
+                  
+                    [innerHTML]="item.locationAddress " >
                     <span><strong>Phone:&nbsp;</strong></span>
                     <a href="{{ 'tel: ' + item.phoneNumber }}">{{
                       item.phoneNumber
                     }}</a>
                   </p>
+                  <p class="contact-sec-phone" >
+                  <span><strong>Phone:&nbsp;</strong></span>
+                  <a href="{{ 'tel: ' + item.phoneNumber }}">{{
+                    item.phoneNumber
+                  }}</a>
+                </p>
                  
                 </ng-container>
                 <ng-container *ngFor="let item of address; let i = index">
@@ -694,14 +704,14 @@
 </div>
 
 <!-- The Modal -->
-<div class="modal formsucess_modalsucess" id="formsucess">
+<div class="modal formsucess_modalsucess"[ngStyle]="{'display':display}" id="formsucess">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal body -->
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
-            <button type="button" class="close" data-dismiss="modal">
+            <button type="button" class="close" (click)=closemodal()>
               &times;
             </button>
             <svg

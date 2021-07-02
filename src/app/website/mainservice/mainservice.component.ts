@@ -19,6 +19,7 @@ export class MainserviceComponent implements OnInit {
     this.api.getAllServices().subscribe((res: any) => {
       if (res.message) {
         this.services = res.message;
+        console.log(this.services);
       }
     });
   }

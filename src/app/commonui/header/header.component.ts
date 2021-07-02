@@ -36,10 +36,7 @@ export class HeaderComponent implements OnInit {
         x.classList.toggle("change");
   }
 
-  clickEvent(){
-    alert();
-    (<any>$(".navbar-collapse")).removeClass("show");
-  }
+ 
 
 
   redirect(path: any) {

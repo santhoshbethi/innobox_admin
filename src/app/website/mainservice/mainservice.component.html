@@ -11,7 +11,7 @@
           transform businesses and customer experiences!
         </p>
         <p class="internal-headersecp1">
-          <a href="latestworks.html" class="internal-headersecp1a"
+          <a href="/#/recent-work" class="internal-headersecp1a"
             >Check out latest Case Study</a
           >
         </p>
@@ -44,7 +44,7 @@
       </div>
     </div>
     <ng-container *ngFor="let item of services; let i = index">
-      <div class="row p-10">
+      <div class="row p-10" *ngIf="item.status==0">
         <div
           *ngIf="i % 2 === 0"
           class="col-md-7 wow fadeInRight servicefordesktop"
@@ -55,7 +55,7 @@
             class="mbl-serviceimg"
           /> -->
           <img
-            src="http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/services/file-1622541069221_Screenshot%20(45).png"
+          [src]="appConfig.imageUrl + item.image2"
             alt="innobox"
             class="mbl-serviceimg"
           />

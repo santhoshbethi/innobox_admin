@@ -37,6 +37,7 @@ SwiperCore.use([
 })
 export class HomeComponent implements OnInit {
   homeForm: FormGroup;
+  display='none';
   categories: any;
   catData: any;
   address: any;
@@ -121,8 +122,8 @@ export class HomeComponent implements OnInit {
           action: 'X',
           class: 'green-snackbar',
         };
-        this.openSnackbar(data);
-        this.homeForm.reset();
+        this.display='block';
+       this.homeForm.reset();
       });
     } else {
       let data = {
@@ -199,6 +200,9 @@ export class HomeComponent implements OnInit {
       this.categories = res.message;
     });
   }
-  
+  closemodal()
+  {
+    this.display='none';
+  }
 }
   

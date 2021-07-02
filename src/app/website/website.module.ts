@@ -46,6 +46,7 @@ import { WifisolutionComponent } from './wifisolution/wifisolution.component';
 import { WirelesstechnologyComponent } from './wirelesstechnology/wirelesstechnology.component';
 import { AskforqouteComponent } from './askforqoute/askforqoute.component';
 
+
 @NgModule({
   declarations: [
     CareerComponent,
@@ -86,6 +87,7 @@ import { AskforqouteComponent } from './askforqoute/askforqoute.component';
     TermsComponent,
     LegalComponent,
     AskforqouteComponent,
+ 
   ],
   imports: [
     CommonModule,

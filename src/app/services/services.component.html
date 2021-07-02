@@ -1,6 +1,6 @@
 <!--  -->
 <!-- internalheader-start -->
-<section class="internal-headersec-contectivity wow fadeInUp"  *ngFor="let items of res"  [ngStyle]="{background: 'url('+appConfig.imageUrl + items.image1+ ')'}">
+<section class="internal-headersec-contectivity wow fadeInUp"  *ngFor="let items of res"  [ngStyle]="{background: 'url('+appConfig.imageUrl + items.image1+ ')no-repeat'}">
     
     <div class="container">
         <div class="row">
@@ -8,8 +8,7 @@
                 <h2 class="internal-headersech2"> {{items.title}}<br /></h2>
                 <p class="internal-headersecp">{{items.qtxt}}</p>
                 <p class="internal-headersecp1">
-                    <a href="#" class="internal-headersecp1a" data-toggle="modal" data-target="#myModalsevices">Talk to
-                        Our Expert</a>
+                    <app-talktoourexpert></app-talktoourexpert>
                 </p>
             </div>
         </div>
@@ -36,7 +35,7 @@
             <div class="col-md-9 wow fadeInLeft">
                 <div class="whyinnoboxdiv1">
                     <h2 class="whyinnoboxdiv1-h2">{{items.title}}</h2>
-                    <p class="whyinnoboxdiv1-p1">{{items.fdcr}}</p>
+                    <p class="whyinnoboxdiv1-p1" [innerHTML]="items.fdcr"></p>
                 </div>
 
                 

@@ -44,7 +44,9 @@
             *ngFor="let item of careers; let i = index"
             class="col-md-4 wow zoomIn"
           >
-            <img [src]="appConfig.imageUrl + item.image" class="shake_hand" />
+     
+            <img  [src]="appConfig.imageUrl + item.image" class="shake_hand" />
+          
             <span>
               <h4 class="carrer-img-h4">
                 {{ item.jobTitle }}
@@ -93,35 +95,12 @@
               <span class="fonts-modal">No of Position :</span>
               {{ careerbyid.opens }}
             </h6>
-            <h6>
+            <h6 *ngIf="careerbyid">
               <span class="fonts-modal">Expectations:</span>
-            </h6>
+           
 
-            <ul class="fonts-modal-ul">
-              <li>Proficient in C/C++.</li>
-              <li>
-                Hands on experience in embedded Linux kernel and application
-                daemon programming.
-              </li>
-              <li>Prior experience on embedded routers is preferred.</li>
-              <li>
-                Strong understanding and knowledge of TCP/IP and related
-                protocols; IPv4,IPv6,TCP, UDP, NetBIOS, ICMP, DNS, DynDNS, NTP,
-                SNMP, HTTP, HTTPS, TFTP, etc.
-              </li>
-              <li>
-                Hands on experience with Linux networking tools such as
-                ebtables, iptables, tcp, ip, tcpdump, etc.
-              </li>
-              <li>Have experience in 802.Q VLAN, SNMP and QOS.</li>
-              <li>Experience on OpenWRT environment is added advantage.</li>
-              <li>Experience on FOTA and OMADM is an added advantage.</li>
-              <li>
-                Experience with Wireshark and ability to perform network traffic
-                analysis to find bottle necks and latency issues.
-              </li>
-              <li>Experience on VPN - IPSEC and GRE tunnels.</li>
-            </ul>
+            <p [innerHTML]="careerbyid.description"></p>
+          </h6>
           </div>
           <div class="col-md-7">
             <div

@@ -97,15 +97,7 @@
                   formControlName="company"
                   type="text"
                 />
-                <P
-                  class="error-class contact-error-class"
-                  *ngIf="
-                    contactForm.get('company')?.touched &&
-                    contactForm.get('company')?.errors
-                  "
-                >
-                  Company is Required
-                </P>
+               
               </div>
               <div class="col-md-6">
                 <label for="mobilenumber">PHONE NUMBER</label>
@@ -136,14 +128,14 @@
                   id="messageabout"
                   name="job2"
                 >
-                  <option value="0">Select</option>
-                  <option>Sales</option>
-                  <option>Support</option>
+               
+                  <option value="0" selected>Sales</option>
+                  <option value="1">Support</option>
                 </select>
                 <P
                   class="error-class contact-error-class"
                   *ngIf="
-                    contactForm.get('messagecat')?.touched &&
+                  contactForm.get('message')?.touched &&
                     contactForm.get('messagecat')?.errors
                   "
                 >
@@ -176,7 +168,7 @@
 
             <div class="row">
               <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-warning innoboxsubmit">
+                <button type="submit" class="btn  innoboxsubmit">
                   Send Message
                 </button>
               </div>
@@ -184,80 +176,30 @@
           </form>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="home-contactaddreess">
-          <ng-container *ngFor="let item of address; let i = index">
-            <p class="contact-sec-p1">
-              <img
-                src="../../../assets/img/placeholder.svg"
-                class="contactformhome-icon"
-              />
-              &nbsp;<span class="contact-place">{{ item.locationName }}</span>
-              <br />
-              {{ item.locationAddress }}<br />
-              <span><strong>Phone:&nbsp;</strong></span>
-              <a href="{{ 'tel: ' + item.phoneNumber }}">{{
-                item.phoneNumber
-              }}</a>
+      <div class="col-md-3 wow fadeInRight">
+        <div class="innobox-addressdiv">
+            <ng-container *ngFor="let item of address; let i = index">
+
+            <h2 class="innobox-contactaddress-h2">{{item.locationCountry}} </h2>
+            <h2 class="innobox-contactaddress-h2">{{ item.locationName }}</h2>
+            <p class="innobox-contactaddress-p" [innerHTML]="item.locationAddress ">
+               
+                  <br>  <span><strong>Phone:</strong></span> <a href="{{ 'tel: ' + item.phoneNumber }}">{{item.phoneNumber}}</a>
             </p>
-            <p *ngIf="i === 0" class="contact-sec-p1">
-              <img
-                src="../../../assets/img/mailicon.svg"
-                class="contactformhome-icon"
-              />
-              &nbsp; Mail:
-              <a
-                href="{{ 'tomail: ' + item.emailAddress }}"
-                class="contact-seca1"
-                >{{ item.emailAddress }}</a
-              >
-            </p>
-          </ng-container>
-        </div>
-      </div>
+            </ng-container>
+            <ng-container *ngFor="let item of address; let i = index">
+              <h2 *ngIf="i === 0"  class="innobox-contactaddress-h2">E-mail:</h2>
+              <p *ngIf="i === 0" class="innobox-contactaddress-p">
+                  <a href="mailto:info@innobox.com">info@innobox.com</a>
+              </p>
+              </ng-container>
+         </div>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- contact section - end -->
-<section class="experience-sec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="experience-h2">Have you tried innobox?</h2>
-        <p class="experience-p">
-          Great things come in small packages. Innobox delivers excellence using
-          5G-enables Smart Technology. Come, explore the world of Wireless Smart
-          Devices with Innobox, the right partner for your Tech Transformation,
-          Business Intelligence and Delivery Excellence
-        </p>
-        <p class="experience-p1">
-          <a href="#" class="" data-toggle="modal" data-target="#myModalsevices"
-            >Get In Touch</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="experience1-sec">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 experience1-sec-col wow zoomIn">
-        <a href="services.html">
-          <div class="experience1-sec-col1div1">
-            <h3 class="experience1-h3">Service</h3>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 experience1-sec-col wow zoomIn">
-        <a href="success-stories.html">
-          <div class="experience1-sec-col1div2">
-            <h3 class="experience1-h3">Success Stories</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<app-getintouch></app-getintouch>
+<app-commonsection></app-commonsection>
