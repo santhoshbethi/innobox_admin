@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   appConfigs: any =[];
   appConfig:any;
   social:any;
+  currentYear:any;
   objectKeys = Object.keys;
 
   constructor(public api: ApiService, public router: Router) {}
@@ -19,7 +20,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.appConfig = appConfig;
     this.getAllMenu();
-   
+    this.currentYear = new Date().getFullYear();
   }
 
   getAllMenu() {
