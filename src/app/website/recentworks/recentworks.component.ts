@@ -14,10 +14,12 @@ export class RecentworksComponent implements OnInit {
   appConfig: any;
   categories: any;
   catData: any;
+  image:any;
   ngOnInit(): void {
     this.appConfig = appConfig;
     this.getCategory();
     this.getAllCatData();
+    this.getImages();
   }
   getAllCatData() {
     let cat_data: any = [];
@@ -72,5 +74,15 @@ export class RecentworksComponent implements OnInit {
     this.api.getRecentWorkCat().subscribe((res: any) => {
       this.categories = res.message;
     });
+  }
+  getImages()
+  {
+    
+      this.api.getTopimg().subscribe((res: any) => {
+     
+          this.image = res.message;
+       
+        console.log(this.image);
+      });
   }
 }

@@ -41,6 +41,10 @@ export class HomeComponent implements OnInit {
   categories: any;
   catData: any;
   address: any;
+  tesimonials:any;
+  whyinb:any;
+  stats:any;
+  
   constructor(
     private _fb: FormBuilder,
     private _snackBar: MatSnackBar,
@@ -58,8 +62,42 @@ export class HomeComponent implements OnInit {
     this.getCategory();
     this.getAllCatData();
     this.getAddress();
+    this.getTestimonials();
+    this.getwhyinb();
+    this.getstats();
    
     myTest([
+      {
+        src: {
+          main: "../../../assets/img/auto.png",
+          cover:"../../../assets/img/auto.png",
+          
+        },
+        title: "Automotive",
+        desc: "Activating <b>senses</b> of <br>" + " automotive cars to <br> ensure safety ",
+        button: {
+          text: "Know More",
+          url: "/#/services",
+          class: "detail-button btn btn-medium btn-primary mainhead-btnknowmore",
+          
+        },
+      },
+      {
+        src: {
+          main: "../../../assets/img/iotslider.png",
+          cover:"../../../assets/img/iotslider.png",
+          
+        },
+        title: "IoT",
+        desc: "Translating <b>ideas</b> into realistic IoT products ",
+        button: {
+          text: "Know More",
+          url: "/#/services",
+          class: "detail-button btn btn-medium btn-primary mainhead-btnknowmore",
+          
+        },
+      },
+    
       {
         src: {
           main: "../../../assets/img/slider-img1.jpg",
@@ -67,11 +105,11 @@ export class HomeComponent implements OnInit {
           
         },
         title: "Intelligent",
-        desc: "Connected Devices for <br>" + "next-gen Networking",
+        desc: "Connected Devices for next-gen Networking ",
         button: {
           text: "Know More",
-          url: "services/",
-          class: "btn btn-medium mainhead-btnknowmore diplaygone",
+          url: "/#/services",
+          class: "detail-button btn btn-medium btn-primary mainhead-btnknowmore",
           
         },
       },
@@ -85,34 +123,52 @@ export class HomeComponent implements OnInit {
         desc: "Tech that Redefines how your IT works ",
         button: {
           text: "Know More",
-          url: "services/",
-          class: "btn btn-medium  mainhead-btnknowmore diplaygone",
+          url: "/#/services",
+          class: "detail-button btn btn-medium btn-primary mainhead-btnknowmore",
           
         },
       },
       {
         src: {
-          main: "../../../assets/img/gryphon-change.jpg",
+          main: "../../../assets/img/slider-img-greyn.jpg",
           cover:
-            "../../../assets/img/gryphon-change.jpg",
+            "../../../assets/img/slider-img-greyn.jpg",
         },
         title: "Road Traffic",
         desc: "Intelligence Delivered <br>" + "with Accuracy ",
         button: {
           text: "Know More",
-          url: "services/",
-          class: "btn btn-medium  mainhead-btnknowmore diplaygone",
+          url: "/#/services",
+          class: " btn btn-medium btn-primary mainhead-btnknowmore detail-button",
         
         },
       },
     ]);
   }
-
+getstats()
+{
+  this.api.getstaticdata().subscribe((res: any) => {
+    this.stats = res.message;
+    
+  });
+}
   getAddress() {
     this.api.getAddress().subscribe((res: any) => {
       this.address = res.message;
     });
   }
+  getwhyinb() {
+    this.api.getWhyinb().subscribe((res: any) => {
+      this.whyinb = res.message;
+      console.log(this.whyinb);
+    });
+  }
+  getTestimonials() {
+    this.api.getTestimonials().subscribe((res: any) => {
+      this.tesimonials = res.message;
+    });
+  }
+
 
   addData() {
     if (this.homeForm.valid) {

@@ -1,19 +1,19 @@
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">Here work is Fun</h2>
-        <p class="internal-headersecp">
-          We create innovative digital products that impact the way people
-          experience the world.
-        </p>
-        <!--  <p class="internal-headersecp1">
-                        <a href="#" class="internal-headersecp1a">We are Hiring</a>
-                    </p>-->
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 1" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+        
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
@@ -39,10 +39,10 @@
         <h4 class="carrer-main-h4">Open Positions</h4>
       </div>
       <div class="col-md-12 innobox-carrerrow1">
-        <div class="row">
+        <div class="row" >
           <div
             *ngFor="let item of careers; let i = index"
-            class="col-md-4 wow zoomIn"
+            class="col-md-4 wow zoomIn" style="margin-top: 25px;"
           >
      
             <img  [src]="appConfig.imageUrl + item.image" class="shake_hand" />
@@ -63,14 +63,16 @@
               >
                 Apply Now & Know More
               </button>
+              
             </span>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
 </section>
-<div class="modal" id="myModal1">
+<div class="modal" id="myModal1"  >
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->
@@ -78,7 +80,7 @@
         <h4 *ngIf="careerbyid" class="modal-title">
           {{ careerbyid.jobTitle }}
         </h4>
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" id="dismiss" data-dismiss="modal">
           &times;
         </button>
       </div>
@@ -92,8 +94,8 @@
               {{ careerbyid.experience }}
             </h6>
             <h6 *ngIf="careerbyid">
-              <span class="fonts-modal">No of Position :</span>
-              {{ careerbyid.opens }}
+              <span class="fonts-modal">Location :</span>
+              {{ careerbyid.locationCountry }}
             </h6>
             <h6 *ngIf="careerbyid">
               <span class="fonts-modal">Expectations:</span>
@@ -163,17 +165,16 @@
                       name="mobile"
                       formControlName="mobile"
                       id="mobile1"
-                      type="text"
+                      type="number"
+                      min="1"
+                     
                     />
-                    <P
-                      class="error-class contact-error-class"
-                      *ngIf="
-                        applynow1Form.get('mobile')?.touched &&
-                        applynow1Form.get('mobile')?.errors
-                      "
-                    >
-                      Mobile is Required
-                    </P>
+                    <div *ngIf=" f1.mobile.touched &&
+                    f1.mobile.errors" class="error-class contact-error-class">  
+                      <div *ngIf="f1.mobile.errors.required">Mobile Number is required.</div>  
+                       <div *ngIf="f1.mobile.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                  </div>  
+                   
                   </div>
                   <div class="col-md-6">
                     <label for="company1">HIGHER QUALIFICATION</label>
@@ -191,7 +192,7 @@
                         applynow1Form.get('previousCompany')?.errors
                       "
                     >
-                      Company is Required
+                      Qulification is Required
                     </P>
                   </div>
                 </div>
@@ -261,80 +262,15 @@
               class="carousel slide"
               data-ride="carousel"
             >
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active text-center p-4">
-                  <p>
-                    I joined Innobox 7 years back and I can proudly say, it is
-                    one of the best decision I made in my career path. At
-                    Innobox we get ample opportunity to work on cutting edge
-                    technologies, interacting with customers and solving their
-                    problems. The management is employee friendly and they keep
-                    everyone motivated to go beyond their usual tasks and work.
-                  </p>
-                  <p>
-                    At Innobox we work as a family and have a lot of fun every
-                    day as we work towards achieving the organizational
-                    objectives.
-                  </p>
-                  <p class="employeeimgeletxtp">
-                    <span>Rajeev Bansal</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    Innobox is a place where it keeps challenging your skill set
-                    to flourish, provides an environment where you can extend &
-                    share your knowledge, encourages you to come up with your
-                    innovative ideas and perfectly a place where it equips
-                    itself with latest technological advancements & niche
-                    technology to grow personally & as a team. A continuous peer
-                    & team support is a cherry on top
-                  </p>
-                  <p class="employeeimgeletxtp">
-                    <span>Madhu Krishna Sandadi</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    Innobox is a great place to work with a culture of caring,
-                    commitment, and extraordinary generosity towards their
-                    employees Company has given me the opportunity to leverage
-                    my experience and apply it to real business challenges.
-                  </p>
-                  <p>Thanks to Innobox for believing in me and my potential.</p>
-                  <p class="employeeimgeletxtp">
-                    <span>Shanti Lakshmi</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    I Started my career in Innobox and had several challenging
-                    and exciting opportunities here also learned and understood
-                    a lot more about the business world through my experiences
-                    and the opportunities that have been provided to me.
-                  </p>
-                  <p>
-                    Our CEO is very cool and hands-on manager, who listens to
-                    our views and implements as per the company requirements. I
-                    can proudly say that I am part of the "Innobox" family.
-                  </p>
-                  <p class="employeeimgeletxtp">
-                    <span>Ajay Pulla</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    It's been a great 8 years journey with Innobox. I love their
-                    openness in embrasing new technologies and had a great
-                    experience being part of future ahead products. It helped to
-                    enhance my verticals technically and managerial.
-                  </p>
-
-                  <p class="employeeimgeletxtp">
-                    <span>Naresh Nelluru</span>
-                  </p>
-                </div>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item  text-center p-4" *ngFor="let items of emptlk; let i = index" [ngClass]= "{'active': i === 0}">
+                <p  [innerHTML]="items.message " ></p>
+                <p class="employeeimgeletxtp">
+                  <span>{{items.name}}</span>
+                </p>
               </div>
+             
+            </div>
               <a
                 class="carousel-control-prev"
                 href="#carouselContent"
@@ -446,7 +382,7 @@
                       applynowForm.get('previousCompany')?.errors
                     "
                   >
-                    Company is Required
+                    Qulification is Required
                   </P>
                 </div>
               </div>
@@ -454,22 +390,20 @@
                 <div class="form-group">
                   <label for="phone7" class="phone">PHONE NUMBER</label><br />
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="phone7"
+                    min="1"
                     formControlName="mobile"
                     placeholder="Phone number*"
                     name="mobilenumber"
                   />
-                  <P
-                    class="error-class contact-error-class"
-                    *ngIf="
-                      applynowForm.get('mobile')?.touched &&
-                      applynowForm.get('mobile')?.errors
-                    "
-                  >
-                    Mobile is Required
-                  </P>
+              
+                  <div *ngIf=" f.mobile.touched &&
+                  f.mobile.errors" class="error-class contact-error-class">  
+                    <div *ngIf="f.mobile.errors.required">Mobile Number is required.</div>  
+                   <div *ngIf="f.mobile.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                </div>  
                 </div>
               </div>
               <div class="col-md-12">
@@ -532,9 +466,13 @@
 
               <div class="col-md-12">
                 <p class="btn-aligin">
-                  <button type="submit" id="positionbtn" class="btn-apply-now">
-                    APPLY NOW
-                  </button>
+                  <button
+                  type="submit"
+                  class="btn btn-warning innoboxsubmit"
+                  id="btn"
+                >
+                  SEND MESSAGE
+                </button>
                 </p>
               </div>
             </div>
@@ -547,3 +485,49 @@
 <!-- services-list section - end -->
 <app-getintouch></app-getintouch>
 <app-commonsection></app-commonsection>
+<div class="modal formsucess_modalsucess" [ngStyle]="{'display':display}" id="formsucess">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="close" (click)=closemodal()>
+              &times;
+            </button>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 130.2 130.2"
+            >
+              <circle
+                class="path circle"
+                fill="none"
+                stroke="#73AF55"
+                stroke-width="6"
+                stroke-miterlimit="10"
+                cx="65.1"
+                cy="65.1"
+                r="62.1"
+              />
+              <polyline
+                class="path check"
+                fill="none"
+                stroke="#73AF55"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                points="100.2,40.2 51.5,88.8 29.8,67.5 "
+              />
+            </svg>
+            <p>
+              Thank you!<br />
+              We received your information. Our expert team will get back to you
+              soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

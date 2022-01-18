@@ -11,6 +11,8 @@ import {Title} from "@angular/platform-browser";
 })
 export class CareerComponent implements OnInit {
   applynowForm: FormGroup;
+  display='none';
+  image:any;
   applynow1Form: FormGroup;
   title: any;
   constructor(
@@ -24,7 +26,7 @@ export class CareerComponent implements OnInit {
       fullname: ['', Validators.required],
       email: ['', Validators.required],
       previousCompany: ['', Validators.required],
-      mobile: ['', Validators.required],
+      mobile: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       applyingFor: ['', Validators.required],
       file: ['', Validators.required],
     });
@@ -32,7 +34,7 @@ export class CareerComponent implements OnInit {
       fullname: ['', Validators.required],
       email: ['', Validators.required],
       previousCompany: ['', Validators.required],
-      mobile: ['', Validators.required],
+      mobile: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       applyingFor: ['', Validators.required],
       file: ['', Validators.required],
       message: [' ', Validators.required],
@@ -42,9 +44,12 @@ export class CareerComponent implements OnInit {
   careers: any;
   careerbyid: any;
   appConfig: any;
+  emptlk:any;
   ngOnInit(): void {
     this.getCareer();
     this.appConfig = appConfig;
+    this.getAllemptlk();
+    this.getImages();
   }
   getCareer() {
     this.api.getCareer().subscribe((response) => {
@@ -90,7 +95,8 @@ export class CareerComponent implements OnInit {
           action: 'X',
           class: 'green-snackbar',
         };
-        this.openSnackbar(data);
+        this.display='block';
+       
         $('#dismiss').trigger('click');
         this.applynowForm.reset();
       });
@@ -103,6 +109,12 @@ export class CareerComponent implements OnInit {
       this.openSnackbar(data);
     }
   }
+  get f(){  
+    return this.applynowForm.controls;  
+  }  
+  get f1(){  
+    return this.applynow1Form.controls;  
+  }  
   addApplyData() {
     console.log(this.applynow1Form.value);
     let _form = new FormData();
@@ -114,15 +126,18 @@ export class CareerComponent implements OnInit {
       }
     }
     if (this.applynow1Form.valid) {
+      
       this.api.applyNow(_form).subscribe((res: any) => {
         let data = {
           message: res.message,
           action: 'X',
           class: 'green-snackbar',
         };
-        this.openSnackbar(data);
+        this.display='block';
         $('#dismiss').trigger('click');
         this.applynow1Form.reset();
+       
+       
       });
     } else {
       let data = {
@@ -137,6 +152,29 @@ export class CareerComponent implements OnInit {
     this._snackBar.open(data.message, data.action, {
       duration: 5000,
       panelClass: [data.class],
+    });
+  }
+  closemodal()
+  {
+    this.display='none';
+    
+  }
+  getImages()
+  {
+    
+      this.api.getTopimg().subscribe((res: any) => {
+     
+          this.image = res.message;
+       
+        console.log(this.image);
+      });
+  }
+  getAllemptlk() {
+    this.api.getemptlk().subscribe((res: any) => {
+      if (res.message) {
+        this.emptlk = res.message;
+     
+      }
     });
   }
 }

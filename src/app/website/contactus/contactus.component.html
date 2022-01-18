@@ -1,18 +1,20 @@
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">Contact Us <br /></h2>
-        <!-- <p class="internal-headersecp">
-                        We create innovative digital products that impact the way people experience the world.
-                    </p>
-                    <p class="internal-headersecp1">
-                        <a href="#" class="internal-headersecp1a">Talk to Our Connectivity Expert</a>
-                    </p>-->
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 3" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+        
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
+
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
@@ -108,15 +110,11 @@
                   id="mobilenumber"
                   type="text"
                 />
-                <P
-                  class="error-class contact-error-class"
-                  *ngIf="
-                    contactForm.get('phone')?.touched &&
-                    contactForm.get('phone')?.errors
-                  "
-                >
-                  Phone is Required
-                </P>
+                <div *ngIf=" f.phone.touched &&
+                    f.phone.errors" class="error-class contact-error-class">  
+                      <div *ngIf="f.phone.errors.required">Mobile Number is required.</div>  
+                     <div *ngIf="f.phone.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                  </div> 
               </div>
             </div>
             <div class="form-group row">
@@ -183,11 +181,13 @@
             <h2 class="innobox-contactaddress-h2">{{item.locationCountry}} </h2>
             <h2 class="innobox-contactaddress-h2">{{ item.locationName }}</h2>
             <p class="innobox-contactaddress-p" [innerHTML]="item.locationAddress ">
-               
-                  <br>  <span><strong>Phone:</strong></span> <a href="{{ 'tel: ' + item.phoneNumber }}">{{item.phoneNumber}}</a>
             </p>
+            <p>
+             <span><strong>Phone:</strong></span> <a href="{{ 'tel: ' + item.phoneNumber }}">{{item.phoneNumber}}</a>
+</p>
             </ng-container>
-            <ng-container *ngFor="let item of address; let i = index">
+          
+            <ng-container *ngFor="let item of address; let i = index" style="margin-top:10px ;">
               <h2 *ngIf="i === 0"  class="innobox-contactaddress-h2">E-mail:</h2>
               <p *ngIf="i === 0" class="innobox-contactaddress-p">
                   <a href="mailto:info@innobox.com">info@innobox.com</a>

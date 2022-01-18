@@ -5,7 +5,7 @@
       </a>
      
        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="container-hamburg" onclick="myFunction(this)">
+                    <div class="container-hamburg" id="hamburg" onclick="myFunction(this)">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
@@ -16,11 +16,11 @@
 
          <ul class="ml-auto navbar-nav">
             <div *ngFor="let item of menu; let i = index">
-               <li *ngIf="item.children.length == 0" class="nav-item">
-                  <a class="nav-link" routerLink="{{item.href}}">{{item.itemName}}</a>
+               <li *ngIf="item.children.length == 0" class="nav-item " style="padding: 10px;">
+                  <a class="nav-link js-scroll-trigger" routerLink="{{item.href}}">{{item.itemName}}</a>
                </li>
 
-               <li *ngIf="item.children.length > 0" class="nav-item dropdown">
+               <li *ngIf="item.children.length > 0" class="nav-item dropdown" style="padding: 10px;">
                   <a class="nav-link dropdown-toggle pointer" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">{{item.itemName}}</a>
 
@@ -31,8 +31,11 @@
 
                         <div *ngFor="let sub of item.children; let i = index" class="childs">
                            <ul class="nav flex-column">
-                              <li *ngIf="sub.children.length == 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
-                                 <a class="nav-link" routerLink="service/{{sub.ID}}">{{sub.itemName}}</a>
+                              <li *ngIf="sub.children.length == 0 && sub.itemName != 'Automotive'" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
+                                 <a class="nav-link js-scroll-trigger" routerLink="service/{{sub.itemName}}/{{sub.ID}}">{{sub.itemName}}</a>
+                              </li>
+                              <li *ngIf="sub.children.length == 0 && sub.itemName == 'Automotive'" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item">
+                                 <a class="nav-link js-scroll-trigger" href="http://automotive.innobox.com">{{sub.itemName}}</a>
                               </li>
                               <li *ngIf="sub.children.length > 0" style="border-bottom: 1px  solid #f0f0f0;"  class="nav-item dropdown testt">
                                  <a class="nav-link  pointer" 
@@ -41,7 +44,7 @@
                                      <div *ngFor="let subchild of sub.children; let i = index">
                                           <ul class="nav flex-column">
                                              <li  class="nav-item" style="border-bottom: 1px  solid #f0f0f0;">
-                                                <a class="nav-link" routerLink="service/{{subchild.ID}}">{{subchild.itemName}}</a>
+                                                <a class="nav-link js-scroll-trigger" routerLink="service/{{subchild.itemName}}/{{subchild.ID}}">{{subchild.itemName}}</a>
                                              </li>
                                              
                                           </ul>

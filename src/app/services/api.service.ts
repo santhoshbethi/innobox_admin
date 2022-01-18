@@ -45,7 +45,11 @@ export class ApiService {
       headers: this.headers,
     });
   }
-
+  getsocial() {
+    return this.http.get(`${appConfig.apiUrl}home/getsocial`, {
+      headers: this.headers,
+    });
+  }
   addContactUs(data: any) {
     return this.http.post(`${appConfig.apiUrl1}cts/sendmsg`, data, {
       headers: this.headers,
@@ -71,7 +75,33 @@ export class ApiService {
     );
   }
   applyNow(data: any) {
-    return this.http.post(`${appConfig.apiUrl}home/applynow`, data, {
+    return this.http.post(`${appConfig.apiUrl1}home/applynow`, data, {
+      headers: this.headers,
+    });
+  }
+  getTopimg() {
+    return this.http.get(`${appConfig.apiUrl1}home/gettopimg`, {
+      headers: this.headers,
+    });
+  }
+  getaboutus()
+  {
+    return this.http.get(`${appConfig.apiUrl1}home/getabtus`, {
+      headers: this.headers,
+    });
+  }
+  getWhyus() {
+    return this.http.get(`${appConfig.apiUrl}home/getwhyus`, {
+      headers: this.headers,
+    });
+  }
+  getstaticdata() {
+    return this.http.get(`${appConfig.apiUrl1}home/getstaticdata`, {
+      headers: this.headers,
+    });
+  }
+  getemptlk() {
+    return this.http.get(`${appConfig.apiUrl}home/getemptlk`, {
       headers: this.headers,
     });
   }
@@ -94,7 +124,18 @@ export class ApiService {
       headers: this.headers,
     });
   }
-
+  getWhyinb() {
+    return this.http.get(`${appConfig.apiUrl}home/getwhyinb`, {
+      headers: this.headers,
+    });
+  }
+  getTestimonials()
+  {
+    return this.http.get(`${appConfig.apiUrl}home/gettestimonials`, {
+      headers: this.headers,
+    });
+  }
+  
   getServiceHighlightById(id:any){
     return this.http.post(`${appConfig.apiUrl}services/getserviceshighlights`, id, {
       headers: this.headers,

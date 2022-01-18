@@ -26,32 +26,33 @@
                     </ul>
                 </div>
                 -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3 class="footer-h3">Contact Us</h3>
         <ul class="footer-ul">
           <li>
-            <a href="#">
-              <span>Phone number</span><br />
+          
+            <span style="color: #a1a8ae;">Phone number</span><br />
               +1-858-848-6782<br />
               +91-939-466-6269
-            </a>
+            
           </li>
           <li>
-            <a href="#">
+            <a href="mailto:info@innobox.com">
               <span>Email</span><br />
               info@innobox.com
             </a>
           </li>
           <li>
-            <a href="#">
-              <span>Business hours</span><br />
-              Monday - Friday 10 AM - 9 PM
-            </a>
-          </li>
+            
+            <span style="color: #a1a8ae;">Business hours</span><br />
+              Monday - Friday 0900 IST - 1800 IST
+         
+         
         </ul>
       </div>
+     
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3 class="footer-h3">USEFUL LINKS</h3>
         <ul class="footer-ul">
           <li>
@@ -76,13 +77,21 @@
           </li>
         </ul>
       </div>
-
-      <div class="col-md-4">
+      <div class="col-md-3">
+        <h3 class="footer-h3">Social Media</h3> 
+        <ul class="footer-ul">
+          <li *ngFor="let item of social; let i = index">
+        <a *ngIf="item.status == 0 && item.value!='' && item.title=='facebook'" href="{{item.value}}" target="_blank" class="fa fa-facebook"></a>
+        <a *ngIf="item.status == 0 && item.value!='' && item.title=='twitter'" href="{{item.value}}" target="_blank" class="fa fa-twitter"></a>
+        <a *ngIf="item.status == 0 && item.value!='' && item.title=='linkdin'" href="{{item.value}}" target="_blank" class="fa fa-linkedin"></a>
+        <a *ngIf="item.status == 0 && item.value!='' && item.title=='insta'" href="{{item.value}}" target="_blank" class="fa fa-instagram"></a></li></ul>
+      </div>
+      <div class="col-md-3">
         <h3 class="footer-h3">information</h3>
         <ul class="footer-ul">
           <li>
             <a routerLink="/{{ appConfig.routes.terms }}">
-              Terms and Conditions
+              Privacy Policy
             </a>
           </li>
           <li>

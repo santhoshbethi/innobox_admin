@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import appConfig from 'src/app/config/appConfig';
 import * as $ from 'jquery';
 import { ApiService } from 'src/app/services/api.service';
 @Component({
@@ -10,6 +11,8 @@ import { ApiService } from 'src/app/services/api.service';
 export class ContactusComponent implements OnInit {
   contactForm: FormGroup;
   address: any;
+  image:any;
+  appConfig:any;
   constructor(
     private _fb: FormBuilder,
     private api: ApiService,
@@ -19,19 +22,31 @@ export class ContactusComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       company: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       message: ['', Validators.required],
       messagecat: ['', Validators.required],
     });
   }
 
   ngOnInit(): void {
+    this.appConfig = appConfig;
     this.getAddress();
+    this.getImages();
   }
   getAddress() {
     this.api.getAddress().subscribe((res: any) => {
       this.address = res.message;
     });
+  }
+  getImages()
+  {
+    
+      this.api.getTopimg().subscribe((res: any) => {
+     
+          this.image = res.message;
+       
+        console.log(this.image);
+      });
   }
   addData() {
     if (this.contactForm.valid) {
@@ -60,4 +75,7 @@ export class ContactusComponent implements OnInit {
       panelClass: [data.class],
     });
   }
+  get f(){  
+    return this.contactForm.controls;  
+  } 
 }

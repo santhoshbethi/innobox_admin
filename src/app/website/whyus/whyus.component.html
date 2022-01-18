@@ -1,27 +1,29 @@
-<section class="internal-headersec wow fadeInUp">
+<ng-container *ngFor="let items of image; let i = index">
+<section *ngIf="items.ID === 2" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="internal-headersech2">Why Us</h2>
-        <p class="internal-headersecp">
-          We create innovative digital products that impact the way people
-          experience the world.
+  
+        <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+        <p class="internal-headersecp" [innerHTML]="items.text">
+         
         </p>
         <app-askforqoute></app-askforqoute>
       </div>
     </div>
   </div>
 </section>
+</ng-container>
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <p class="servicedetails-p">
+        <!-- <p class="servicedetails-p">
           Our service offerings are way different from conventional service
           providers, we just don’t provide solution basing on requirement.
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
@@ -42,7 +44,7 @@
           <li><a href="#tab3" data-toggle="tab">Certification</a></li>
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content" id="tabsdata">
           <div class="tab-pane active" id="tab1">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -62,237 +64,25 @@
                     <div class="col-md-12">
                       <h3 class="inbox-why-h3">Process Details</h3>
                       <p class="inbox-why-p1">
-                        Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products.
+                        Our service offerings are way different from conventional service providers, we just don’t provide solution basing on requirement alone but go beyond.  We work with our clients to realize their ideas into certified commercial products. 
                       </p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <ul class="timeline">
-                        <li class="timeline-event">
+                        <li class="timeline-event"  *ngFor="let items of whyus; let i = index" >
+                          <ng-container *ngIf="items.category === 'Process Details'">
                           <label class="timeline-event-icon"></label>
                           <div class="timeline-event-copy">
-                            <h3>Ideation Discussion</h3>
-                            <p class="timeline-event-p1">
-                              We meet our clients and understand the idea for
-                              which they are looking for a solution. Our team
-                              clearly listen to the client’s needs. With our
-                              experience we strengthen the idea with our inputs
-                              and get into discovery phase. Output of this
-                              particular phase is to get the idea either
-                              abstract or conceptual from client.
+                            <h3>{{items.title}}</h3>
+                            <p class="timeline-event-p1" [innerHTML]="items.content">
+                         
                             </p>
                           </div>
+                        </ng-container>
                         </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Discovery phase</h3>
-                            <p class="timeline-event-p1">
-                              In this phase we bring back the client idea on to
-                              the table of experts. Our expert team starts
-                              brainstorming and analysing the idea. List out
-                              each and every technological needs. All the
-                              rudimentary technological needs are collected and
-                              documented. The technological needs can be either
-                              chipset selection, tools involved, front end
-                              possibilities, back end possibilities, middleware
-                              choices, memory needs, proprietary stack or open
-                              source, hardware module involved, power needs,
-                              performance targets, cloud needs, application
-                              possibilities, security aspects, types of standard
-                              involved, certification needs, compliance needs.
-                              This phase has two targets, first target being
-                              technologies involved and second target being
-                              preparation of architecture flow with different
-                              technological choices. We then discuss the
-                              architectures with our clients and indicate the
-                              pros and cons of each approach. Cost factor,
-                              complexity of use, availability and support of
-                              required hardware and software, interfaces
-                              involved are all focused in this phase. This phase
-                              will enable requirement phase for gathering and
-                              consolidating requirements
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Requirement collection</h3>
-                            <p class="timeline-event-p1">
-                              Using the inputs from discovery phase i.e. the
-                              finalized architecture flow diagram, each and
-                              every module is picked. The software, hardware
-                              expectations of each module, interfaces with
-                              neighbouring modules are carefully documented. We
-                              also identify the priority of each requirement.
-                              The requirements are segregated for each layer UI,
-                              middle ware and low level drivers. Performance
-                              expectations of each and every component is also
-                              captured as a requirement. This phase also
-                              captures high level and low level design
-                              requirements. We discuss these requirements with
-                              our clients each and every detail to ensure that
-                              expectations of the project based on requirements
-                              is clearly inline between both of us.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Milestone definitions</h3>
-                            <p class="timeline-event-p1">
-                              A clear requirements in the previous phase helps
-                              in defining milestones that are needed for the
-                              project. Every milestone will be associated with
-                              some time lines. Each milestone is further divided
-                              into different sprints and all this is done in
-                              alignment with the clients. We understand the
-                              importance of costs involved in development of any
-                              product. So we ensure that wherever possible
-                              activities planned are developed in parallel for
-                              maximum productivity and efficiency. Our resource
-                              planning also happens in a very judicial way not
-                              to burden our clients.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Development</h3>
-                            <p class="timeline-event-p1">
-                              In this phase, every activity planned in sprint is
-                              picked. Hardware development and software/firmware
-                              development happen in parallel. Our hardware
-                              engineers work on designing multi-layer boards to
-                              ensure. Multiple variants of boards will be
-                              planned namely development boards and reference
-                              boards. Before designing, the hardware modules
-                              needed and their placement on the board is
-                              thoroughly reviewed with our inhouse system
-                              experts. This phase takes care of important
-                              aspects like, minimizing interference issues on
-                              the board and also ensures easy bus connectivity
-                              between hardware blocks. Our software designers
-                              and developers define the software architecture to
-                              take care of inter processor communication, they
-                              customize the board support package of different
-                              SOC providers. A well-defined IoT platform API and
-                              network standards will be used throughout the
-                              development phase. A cross alignment between
-                              hardware and software architects happen regularly
-                              to ensure the needs of software are taken care in
-                              hardware development. This approach helps in no
-                              post silicon surprises. Unit testing is all done
-                              by respective software and hardware engineers.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Cloud Computing</h3>
-                            <p>
-                              In this phase, the cloud computing needs of our
-                              client are evaluated. Our cloud architects
-                              understands the requirements and then propose the
-                              right backend service IaaS, PaaS, SaaS and right
-                              deployment models. We work on frontend
-                              requirements and develop a mobile application to
-                              access the backend services. Data security and
-                              privacy requirements are also analysed as per the
-                              client requirements. Our team’s proficiency in
-                              working with various cloud service providers like
-                              MS Azure, GC, AWS helped to build cloud based
-                              solutions to our clients for various products in a
-                              more shorter time.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Hardware Software Integration</h3>
-                            <p class="timeline-event-p1">
-                              An integration team receives the hardware and
-                              software building blocks from different teams. All
-                              the software blocks are integrated as per the
-                              architecture needs. Integrated software/firmware
-                              is tested by stubbing the code at various levels.
-                              An application to verify the integrated software
-                              is developed. Overall firmware is built and
-                              flashed on to the hardware and functionalities are
-                              checked. Critical aspects of memory leaks, code
-                              compliance issues, open source violations are
-                              checked and fixed in this phase.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Verification and Validation</h3>
-                            <p class="timeline-event-p1">
-                              Our stringent testing process will unearth any
-                              system issues in this phase. Different scenarios
-                              like jitters, interference measurements, loopback
-                              tests, speed tests, API conformance tests, inter
-                              processor communication effectiveness, command
-                              handling, processing delay. A test strategy
-                              capturing integration tests and system testing
-                              will be started almost in parallel to development.
-                              Test scripts needed to realize the test strategy
-                              are developed. Traceability between requirements
-                              and test case in test specification document are
-                              checked. This will help to fill if any gaps are
-                              there in the requirements. This approach helps
-                              that no requirement misses testing. All the issues
-                              observed in this phase will be reported back to
-                              our development team using bug tracking tools.
-                              Both pre-silicon i.e. FPGA level verification and
-                              post silicon validation are performed.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="timeline-event">
-                          <label class="timeline-event-icon"></label>
-                          <div class="timeline-event-copy">
-                            <h3>Compliance and Certification</h3>
-                            <p class="timeline-event-p1">
-                              Different products need different types of
-                              compliances and certifications basing on their
-                              usage. A product that is needed in automotive will
-                              be different from product in consumer electronics,
-                              a product that is needed in health industry will
-                              be different from a product in retail. A product
-                              that is needed in industry or enterprise will be
-                              different from the product used in home. In
-                              designing these networking and IoT products basing
-                              on their end usage, there are multiple aspects
-                              that are considered, low power, light weight, less
-                              delay, no external noise, time sensitivity,
-                              response time, durability, ruggedness, precision,
-                              lesser false detections, local reforms of a
-                              country, carrier frequency allocations, different
-                              operator specifications, different SOC manufacture
-                              specification, carrier network expectations,
-                              different sensors expectations, weather conditions
-                              i.e. climate insensitivity, communication across
-                              multiple type of devices make and made, cloud
-                              platform needs etc.. All these differences lead to
-                              different standards and certification needs. Our
-                              expertise in compliance and certification helped
-                              in delivering multiple products.
-                            </p>
-                          </div>
-                        </li>
+                       
                       </ul>
                     </div>
                   </div>
@@ -300,6 +90,8 @@
               </div>
             </div>
           </div>
+
+
           <div class="tab-pane" id="tab2">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -322,20 +114,16 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-md-6">
-                      <!--  -->
+                    <ng-container  *ngFor="let items of whyus; let i = index">
+                      <div class="col-md-6" *ngIf="items.category === 'Association Details'">
                       <a
                         class="card1"
                         href="https://nasscom.in/members-listing"
                         target="_blank"
                       >
-                        <h3 class="inbx-h3a">NASSCOM Member</h3>
-                        <p class="inbx-pa small">
-                          Innobox has enlisted itself as member of NASSCOM and
-                          will abide by the code and conduct of the association.
-                          Innobox and its associates will have the unique
-                          opportunity to participate in adapting and sharing
-                          best industry practises
+                        <h3 class="inbx-h3a">{{items.title}}</h3>
+                        <p class="inbx-pa small" [innerHTML]="items.content">
+                          
                         </p>
                         <div class="go-corner" href="#">
                           <div class="go-arrow">→</div>
@@ -343,28 +131,9 @@
                       </a>
                       <!--  -->
                     </div>
+                      </ng-container>
+                  
 
-                    <div class="col-md-6">
-                      <!--  -->
-                      <a
-                        class="card1"
-                        href="https://www.iaccindia.com/"
-                        target="_blank"
-                      >
-                        <h3 class="inbx-h3a">IACC Member</h3>
-                        <p class="inbx-pa small">
-                          The Indo-American Chamber of Commerce (IACC), is the
-                          apex bi-lateral Chamber synergizing India-US Economic
-                          Engagement and being a member of IACC will honor the
-                          code of conduct of the Chamber. Helps Innobox to stay
-                          updates on the bilateral policies of trade.
-                        </p>
-                        <div class="go-corner" href="#">
-                          <div class="go-arrow">→</div>
-                        </div>
-                      </a>
-                      <!--  -->
-                    </div>
                   </div>
                 </div>
               </div>
@@ -383,54 +152,30 @@
                   </a>
                 </h4>
               </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h3 class="inbox-why-h3">Certification</h3>
-                      <p class="inbox-why-p1">
-                        Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products.
+              <div id="collapseThree" class="panel-collapse collapse">  
+                <div class="panel-body" >
+                  <ng-container *ngFor="let items of whyus; let i = index">
+                    <div class="row" *ngIf="items.category === 'Certification'">
+                      <div class="col-md-12">
+                          <h3 class="inbox-why-h3">{{items.title}}</h3>
+                          </div>
+                          </div>
+                  <div class="row" *ngIf="items.category === 'Certification'" >
+  
+                    <div class="col-md-8"  >
+                  
+                      <p class="inbox-why-p1" [innerHTML]="items.content">
                       </p>
-                    </div>
-                    <div class="col-md-8">
-                      <p class="inbox-why-p1">
-                        Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products. Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products. Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products. Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products. Our service offerings are way different from
-                        conventional service providers, we just don’t provide
-                        solution basing on requirement. We work with our clients
-                        to realize their ideas into certified commercial
-                        products.
-                      </p>
+                      
                     </div>
                     <div class="col-md-4">
                       <p class="inbox-why-p1">
-                        <img
-                          src="img/innobox-cert.jpg"
-                          alt="inobox"
-                          class="inno-certimg"
-                        />
+                        <img  [src]="appConfig.imageUrl + items.path" class="inno-certimg" />
+                      
                       </p>
                     </div>
                   </div>
+                  </ng-container>
                 </div>
               </div>
             </div>

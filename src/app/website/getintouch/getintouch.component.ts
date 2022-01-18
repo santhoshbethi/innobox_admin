@@ -20,7 +20,7 @@ export class GetintouchComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       company: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       message: ['', Validators.required],
       messagecat: ['', Validators.required],
     });
@@ -58,4 +58,7 @@ export class GetintouchComponent implements OnInit {
   {
     this.display='none';
   }
+  get f(){  
+    return this.contactForm.controls;  
+  } 
 }

@@ -1,18 +1,19 @@
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">Privacy Policy</h2>
-        <p class="internal-headersecp">
-          This privacy policy is subject to change by Innobox.
-        </p>
-        <!-- <p class="internal-headersecp1">
-                        <a href="#" class="internal-headersecp1a">Check out latest Case Study</a>
-                    </p> -->
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 7" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+        
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!--  -->
 

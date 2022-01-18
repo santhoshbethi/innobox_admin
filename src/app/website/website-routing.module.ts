@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: appConfig.routes.contactus, component: ContactusComponent },
   { path: appConfig.routes.whyus, component: WhyusComponent },
   {
-    path: appConfig.routes.recentworkcat + '/:id',
+    path: appConfig.routes.recentworkcat +'/:name'+ '/:id',
     component: GryphionComponent,
   },
   { path: appConfig.routes.fiveg, component: FivegComponent },
@@ -55,7 +55,7 @@ const routes: Routes = [
   { path: appConfig.routes.mainservice, component: MainserviceComponent },
 
   {
-    path: appConfig.routes.service + '/:id',
+    path: appConfig.routes.service +'/:name'+ '/:id',
     component: ServicesComponent,
   },
   {

@@ -9,11 +9,13 @@ import { ApiService } from 'src/app/services/api.service';
 export class MainserviceComponent implements OnInit {
   appConfig: any;
   services: any;
+  image:any;
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.appConfig = appConfig;
     this.getAllServices();
+    this.getImages();
   }
   getAllServices() {
     this.api.getAllServices().subscribe((res: any) => {
@@ -23,4 +25,14 @@ export class MainserviceComponent implements OnInit {
       }
     });
   }
+  getImages()
+{
+    
+  this.api.getTopimg().subscribe((res: any) => {
+ 
+      this.image = res.message;
+   
+    console.log(this.image);
+  });
+}
 }

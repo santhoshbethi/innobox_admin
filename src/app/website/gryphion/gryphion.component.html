@@ -1,5 +1,5 @@
 <!--  --><!-- internalheader-start -->
-<section class="internal-headersec wow fadeInUp">
+<section class="internal-headersec wow fadeInUp"  style="background-image: url('../../../assets/img/internalbg.jpg');">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -20,8 +20,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <p class="servicedetails-p">
-          {{ singleData ? singleData.shdcr : "" }}
+        <p class="servicedetails-p" [innerHTML]="singleData.shdcr">
+         
         </p>
       </div>
     </div>
@@ -37,9 +37,9 @@
           <h4 class="about-project-h4">
             {{ singleData ? singleData.title : "" }}
           </h4>
-          <p class="about-project-p">{{ singleData ? singleData.qtxt : "" }}</p>
-          <p class="about-project-p1">
-            {{ singleData ? singleData.fdcr : "" }}
+  
+          <p class="about-project-p1" [innerHTML]="singleData.fdcr">
+       
           </p>
         </div>
       </div>
@@ -189,121 +189,33 @@
 <!-- customer-say-start -->
 <section class="customer-say-sec wow fadeInUp">
   <div class="container-fluid customer-say-container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="customer-say-h2">What <br />Customers Say</h2>
-      </div>
-    </div>
-    <div class="row wow fadeInRight">
-      <div class="col-md-12 customer-say-col12">
-        <!-- myCarousel - start -->
-        <div
-          id="customerCarousel"
-          class="carousel carousel1 slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner carousel-inner1 row w-100 mx-auto">
-            <div class="carousel-item carousel-item1 col-md-4 active">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "We partnered with Innobox in 2017 to develop a Mobile App
-                    for our business. In one word, they have delivered
-                    ‘outstanding’ service throughout the process. "
-                  </p>
-                  <!-- <p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox helped us develop a Traffic Analytics Model for our
-                    business. The team is quite knowledgeable and what they
-                    delivered is beyond perfection. We appreciate the support. "
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                                Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "The team at Innobox has assisted us with Testing Strategies
-                    for our AI-based Application. They have developed and
-                    implemented the right testing methodologies that saved time,
-                    money and are highly efficient. "
-                  </p>
-                  <!-- <p class="card-text customer-sayp2">
-                                                Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox has been our technology partner since our firm’s
-                    inception – delivering end-to-end design, development,
-                    implementation, testing, training and support services with
-                    great efficiency."
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox has been a dependable development partner for us
-                    from day one, and they have a deep level of expertise in
-                    product development and testing. The leadership team at
-                    Innobox has always worked to support our resource needs.
-                    They are the quality and reliable partner to keep if you are
-                    looking for a long term relationship to augment your
-                    internal team."
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
+      <div class="row">
+          <div class="col-md-12">
+              <h2 class="customer-say-h2">What <br>Customers Say</h2>
           </div>
-        </div>
-        <!-- myCarousel - end  -->
       </div>
-    </div>
+      <div class="row wow fadeInRight">
+          <div class="col-md-12 customer-say-col12">
+              <!-- myCarousel - start -->
+                  <div id="customerCarousel" class="carousel carousel1 slide" data-ride="carousel">
+                      <div class="carousel-inner carousel-inner1 row w-100 mx-auto">
+              
+                          <div  *ngFor="let item of tesimonials; let i = index" [ngClass]= "{'active': i === 0}"    class="carousel-item carousel-item1 col-md-4 active" >
+                              <div class="card">
+                                  <div class="card-body">
+                                      <img  src="../../../assets/img/customercardimg.svg"  class="customer-sayimg">
+                                      <p class="card-text customer-sayp1">"{{item.content}}"</p>
+                                  
+                                  </div>
+                              </div>
+                              </div>
+                      
+                        
+                      </div>
+                  </div>
+              <!-- myCarousel - end  -->
+          </div>
+      </div>
   </div>
 </section>
 <!-- customer-say-end -->

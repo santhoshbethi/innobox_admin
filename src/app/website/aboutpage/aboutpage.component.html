@@ -1,17 +1,19 @@
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">About Us<br /></h2>
-        <p class="internal-headersecp">
-          Innobox brings years of experience and loads of passion into
-          developing each product to deliver business intelligence at the touch
-          of a button!
-        </p>
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 5" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+        
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!-- creative - start -->
 <section class="creative-sec">
@@ -275,7 +277,7 @@
             class="rounded-circle rounded-circle-padding"
           />
           <div class="media-body">
-            <h4 class="member-rowh4">Chandra Shekar</h4>
+            <h4 class="member-rowh4">Chandrasekhar Morisetti</h4>
             <p><span>Director, Software Engineering</span></p>
             <p class="member-rowp">
               A technical enthusiast with an experience of over 20 years, Chandra is responsible for Innobox's automotive and IoT division. His acumen in the technical knowhow of multiple verticals helped in winning customer confidence and customer engagements. Chandra's expertise helped Innobox expand into most happening automotive and IoT industries.
@@ -315,78 +317,13 @@
               data-ride="carousel"
             >
               <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active text-center p-4">
-                  <p>
-                    I joined Innobox 7 years back and I can proudly say, it is
-                    one of the best decision I made in my career path. At
-                    Innobox we get ample opportunity to work on cutting edge
-                    technologies, interacting with customers and solving their
-                    problems. The management is employee friendly and they keep
-                    everyone motivated to go beyond their usual tasks and work.
-                  </p>
-                  <p>
-                    At Innobox we work as a family and have a lot of fun every
-                    day as we work towards achieving the organizational
-                    objectives.
-                  </p>
+                <div class="carousel-item  text-center p-4" *ngFor="let items of emptlk; let i = index" [ngClass]= "{'active': i === 0}">
+                  <p  [innerHTML]="items.message " ></p>
                   <p class="employeeimgeletxtp">
-                    <span>Rajeev Bansal</span>
+                    <span>{{items.name}}</span>
                   </p>
                 </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    Innobox is a place where it keeps challenging your skill set
-                    to flourish, provides an environment where you can extend &
-                    share your knowledge, encourages you to come up with your
-                    innovative ideas and perfectly a place where it equips
-                    itself with latest technological advancements & niche
-                    technology to grow personally & as a team. A continuous peer
-                    & team support is a cherry on top
-                  </p>
-                  <p class="employeeimgeletxtp">
-                    <span>Madhu Krishna Sandadi</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    Innobox is a great place to work with a culture of caring,
-                    commitment, and extraordinary generosity towards their
-                    employees Company has given me the opportunity to leverage
-                    my experience and apply it to real business challenges.
-                  </p>
-                  <p>Thanks to Innobox for believing in me and my potential.</p>
-                  <p class="employeeimgeletxtp">
-                    <span>Shanti Lakshmi</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    I Started my career in Innobox and had several challenging
-                    and exciting opportunities here also learned and understood
-                    a lot more about the business world through my experiences
-                    and the opportunities that have been provided to me.
-                  </p>
-                  <p>
-                    Our CEO is very cool and hands-on manager, who listens to
-                    our views and implements as per the company requirements. I
-                    can proudly say that I am part of the "Innobox" family.
-                  </p>
-                  <p class="employeeimgeletxtp">
-                    <span>Ajay Pulla</span>
-                  </p>
-                </div>
-                <div class="carousel-item text-center p-4">
-                  <p>
-                    It's been a great 8 years journey with Innobox. I love their
-                    openness in embrasing new technologies and had a great
-                    experience being part of future ahead products. It helped to
-                    enhance my verticals technically and managerial.
-                  </p>
-
-                  <p class="employeeimgeletxtp">
-                    <span>Naresh Nelluru</span>
-                  </p>
-                </div>
+               
               </div>
               <a
                 class="carousel-control-prev"

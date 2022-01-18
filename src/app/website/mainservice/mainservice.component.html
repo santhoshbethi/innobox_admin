@@ -1,24 +1,24 @@
 <!-- internalheader-start -->
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">
-          Delivering Technology-as-a-Service!
-        </h2>
-        <p class="internal-headersecp">
-          We design, develop and deliver innovative digital products that
-          transform businesses and customer experiences!
-        </p>
-        <p class="internal-headersecp1">
-          <a href="/#/recent-work" class="internal-headersecp1a"
-            >Check out latest Case Study</a
-          >
-        </p>
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 8" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+          <p class="internal-headersecp1">
+            <a href="/#/successstories" class="internal-headersecp1a"
+              >Check out latest Case Study</a
+            >
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
@@ -64,9 +64,9 @@
           <div class="p-25">
             <h4 class="services-network-h4">{{ item.title }}</h4>
             <div class="serviformobile"></div>
+            <p class="services-network-p" [innerHTML]="item.shdcr"></p>
             <p class="services-network-p">
-              {{ item.shdcr }}
-            </p>
+            
             <p class="know-more">
               <a
                 routerLink="/{{
@@ -82,16 +82,16 @@
           *ngIf="i % 2 !== 0"
           class="col-md-7 wow fadeInRight servicefordesktop"
         >
-          <!-- <img
-            [src]="appConfig.imageUrl + item.image1"
-            alt="innobox"
-            class="mbl-serviceimg"
-          /> -->
           <img
-            src="http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/services/file-1622541069221_Screenshot%20(45).png"
+            [src]="appConfig.imageUrl + item.image2"
             alt="innobox"
             class="mbl-serviceimg"
           />
+          <!-- <img
+            src="http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/services/file-1622541069221_Screenshot%20(45).png"
+            alt="innobox"
+            class="mbl-serviceimg"
+          /> -->
         </div>
       </div>
     </ng-container>

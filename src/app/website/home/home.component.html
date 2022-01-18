@@ -43,36 +43,19 @@
       </div>
     </div>
     <div class="row stacksrow wow fadeInUp">
+      <ng-container *ngFor="let items of stats; let i = index">
       <div class="col-md-3">
         <div class="what-stacks">
-          <h4 class="what-stacks-h4 fig-number">30</h4>
-          <p class="what-stacks-p">Products shipped</p>
+          <h4 class="what-stacks-h4 fig-number">{{items.value}}</h4>
+          <p class="what-stacks-p">{{items.title}}</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="what-stacks">
-          <h4 class="what-stacks-h4 fig-number">150</h4>
-          <p class="what-stacks-p">Employees</p>
-        </div>
-      </div>
+     </ng-container>
 
-      <div class="col-md-3">
-        <div class="what-stacks">
-          <h4 class="what-stacks-h4"><span class="fig-number">10</span></h4>
-          <p class="what-stacks-p">Customers</p>
-        </div>
-      </div>
+  
 
-      <div class="col-md-3">
-        <div class="what-stacks">
-          <h4 class="what-stacks-h4">
-            <span class="">$</span><span class="fig-number">300</span
-            ><span>M</span>
-          </h4>
-          <p class="what-stacks-p">Saving for customers</p>
-        </div>
-      </div>
+     
     </div>
   </div>
 </section>
@@ -169,7 +152,7 @@
               <a
                 class="portfoliodetail-a"
                 routerLink="/{{
-                  appConfig.routes.recentworkcat + '/' + items.ID
+                  appConfig.routes.recentworkcat + '/' + items.homename+ '/' + items.ID
                 }}"
               >
                 <div class="recentboxdiv">
@@ -195,99 +178,28 @@
         <h2 class="why-innoboxh2">Why INNOBOX?</h2>
       </div>
     </div>
+    <ng-container >
     <div class="row">
-      <div class="col-md-6 wow zoomIn">
+      
+      <div class="col-md-6 wow zoomIn" *ngFor="let item of whyinb; let i = index" >
         <div class="why-boxsec">
           <div class="why-box">
-            <div class="why-box-left">
-              <img
-                src="../../../assets/img/svg1_white.svg"
-                data-img="img/svg1_red.svg"
-                data-img1="img/svg1_white.svg"
-                class="innobox-img"
-                alt="why-box-left"
-              />
-            </div>
-            <div class="why-box-right">
-              <h4 class="why-box-righth4">Out-of-the-Box Thinking</h4>
-              <p class="why-box-rightp">
-                We consistently strive to deliver cutting-edge solutions that
-                are at par with world-class IT standards.
-              </p>
-            </div>
+              <div class="why-box-left">
+                  <img  src="../../../assets/img/svg1_white.svg"  data-img="img/svg1_red.svg" data-img1="img/svg1_white.svg" class="innobox-img" alt="why-box-left">
+              </div> 
+              <div class="why-box-right">
+                  <h4 class="why-box-righth4">{{item.title}}</h4>
+                  <p class="why-box-rightp">
+                {{item.content}}</p>
+              </div>                            
           </div>
-        </div>
+      </div>
       </div>
 
-      <div class="col-md-6 wow zoomIn">
-        <div class="why-boxsec">
-          <div class="why-box">
-            <div class="why-box-left">
-              <img
-                src="../../../assets/img/svg1_white.svg"
-                data-img="img/svg1_red.svg"
-                data-img1="img/svg1_white.svg"
-                class="innobox-img"
-                alt="why-box-left"
-              />
-            </div>
-            <div class="why-box-right">
-              <h4 class="why-box-righth4">Business Agility</h4>
-              <p class="why-box-rightp">
-                We focus on the design & development of products that surpass
-                customer expectations & augment their business agility
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+ 
 
-      <div class="col-md-6 wow zoomIn">
-        <div class="why-boxsec">
-          <div class="why-box">
-            <div class="why-box-left">
-              <img
-                src="../../../assets/img/svg1_white.svg"
-                data-img="img/svg1_red.svg"
-                data-img1="img/svg1_white.svg"
-                class="innobox-img"
-                alt="why-box-left"
-              />
-            </div>
-            <div class="why-box-right">
-              <h4 class="why-box-righth4">Scalable Solutions</h4>
-              <p class="why-box-rightp">
-                We embrace and contribute to open source software to offer
-                scalable solutions while adhering to high quality standards..
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 wow zoomIn">
-        <div class="why-boxsec">
-          <div class="why-box">
-            <div class="why-box-left">
-              <img
-                src="../../../assets/img/svg1_white.svg"
-                data-img="img/svg1_red.svg"
-                data-img1="img/svg1_white.svg"
-                class="innobox-img"
-                alt="why-box-left"
-              />
-            </div>
-            <div class="why-box-right">
-              <h4 class="why-box-righth4">Resilient Processes</h4>
-              <p class="why-box-rightp">
-                We use an organized resilient internal process to guarantee
-                secured solutions while promising on-time delivery of products.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+  </ng-container>
   </div>
 </section>
 <!-- why innobox - end -->
@@ -318,127 +230,38 @@
         </div>
     </section> -->
 <!-- easy-to-use- end -->
-<!-- customer-say-start -->
-<section class="customer-say-sec wow fadeInUp">
-  <div class="container-fluid customer-say-container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="customer-say-h2">What <br />Customers Say</h2>
-      </div>
-    </div>
-    <div class="row wow fadeInRight">
-      <div class="col-md-12 customer-say-col12">
-        <!-- myCarousel - start -->
-        <div
-          id="customerCarousel"
-          class="carousel carousel1 slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner carousel-inner1 row w-100 mx-auto">
-            <div class="carousel-item carousel-item1 col-md-4 active">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "We partnered with Innobox in 2017 to develop a Mobile App
-                    for our business. In one word, they have delivered
-                    ‘outstanding’ service throughout the process. "
-                  </p>
-                  <!-- <p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
+   <!-- customer-say-start -->
+   <section class="customer-say-sec wow fadeInUp">
+    <div class="container-fluid customer-say-container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="customer-say-h2">What <br>Customers Say</h2>
             </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox helped us develop a Traffic Analytics Model for our
-                    business. The team is quite knowledgeable and what they
-                    delivered is beyond perfection. We appreciate the support. "
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                                Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "The team at Innobox has assisted us with Testing Strategies
-                    for our AI-based Application. They have developed and
-                    implemented the right testing methodologies that saved time,
-                    money and are highly efficient. "
-                  </p>
-                  <!-- <p class="card-text customer-sayp2">
-                                                Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox has been our technology partner since our firm’s
-                    inception – delivering end-to-end design, development,
-                    implementation, testing, training and support services with
-                    great efficiency."
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item carousel-item1 col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="../../../assets/img/customercardimg.svg"
-                    class="customer-sayimg"
-                  />
-                  <p class="card-text customer-sayp1">
-                    "Innobox has been a dependable development partner for us
-                    from day one, and they have a deep level of expertise in
-                    product development and testing. The leadership team at
-                    Innobox has always worked to support our resource needs.
-                    They are the quality and reliable partner to keep if you are
-                    looking for a long term relationship to augment your
-                    internal team."
-                  </p>
-                  <!--<p class="card-text customer-sayp2">
-                                            Sean Walker / <span>OWW Studio</span>-->
-                  <!-- </p> -->
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- myCarousel - end  -->
-      </div>
+        <div class="row wow fadeInRight">
+            <div class="col-md-12 customer-say-col12">
+                <!-- myCarousel - start -->
+                    <div id="customerCarousel" class="carousel carousel1 slide" data-ride="carousel">
+                        <div class="carousel-inner carousel-inner1 row w-100 mx-auto">
+                
+                            <div  *ngFor="let item of tesimonials; let i = index" [ngClass]= "{'active': i === 0}"    class="carousel-item carousel-item1 col-md-4 active" >
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img  src="../../../assets/img/customercardimg.svg"  class="customer-sayimg">
+                                        <p class="card-text customer-sayp1">"{{item.content}}"</p>
+                                    
+                                    </div>
+                                </div>
+                                </div>
+                        
+                          
+                        </div>
+                    </div>
+                <!-- myCarousel - end  -->
+            </div>
+        </div>
     </div>
-  </div>
-</section>
-<!-- customer-say-end -->
+</section><!-- customer-say-end -->
 <!-- contact - start -->
 <section class="contact-sec wow fadeInUp">
   <div class="container">

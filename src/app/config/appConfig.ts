@@ -1,10 +1,8 @@
 const appConfig = {
   appName: 'Innobox',
-  apiUrl:
-    'http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/api/web/',
-    apiUrl1:
-    'http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/api/',
-  imageUrl: 'http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080',
+  apiUrl:   'https://innobox.com:8080/api/web/',
+    apiUrl1:   'https://innobox.com:8080/api/',
+   imageUrl: 'https://innobox.com:8080',
 
 
   routes: {
@@ -20,7 +18,7 @@ const appConfig = {
     lab: 'lab',
     greyn: 'greyn',
     mobileapps: 'mobile-apps',
-    recentworks: 'recent-work',
+    recentworks: 'successstories',
     mainservice: 'services',
     service: 'service',
     // networkstack: 'network-stack',
@@ -46,7 +44,7 @@ const appConfig = {
     sihomerouter: 'secure-and-intelligent-home-router',
     multibandfiveg: 'multiband-5g-gateway',
     aboutus: 'about-us',
-    terms: 'terms-and-condition',
+    terms: 'privacypolicy',
     legal: 'legal',
   },
 };

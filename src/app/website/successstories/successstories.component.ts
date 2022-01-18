@@ -11,11 +11,13 @@ export class SuccessstoriesComponent implements OnInit {
   constructor(private api: ApiService) {}
   appConfig: any;
   categories: any;
+  image:any;
   catData: any;
   ngOnInit(): void {
     this.appConfig = appConfig;
     this.getCategory();
     this.getAllCatData();
+    this.getImages();
   }
   getAllCatData() {
     let cat_data: any = [];
@@ -31,6 +33,16 @@ export class SuccessstoriesComponent implements OnInit {
       this.catData = cat_data;
       console.log(this.catData);
     });
+  }
+  getImages()
+  {
+    
+      this.api.getTopimg().subscribe((res: any) => {
+     
+          this.image = res.message;
+       
+        console.log(this.image);
+      });
   }
   changeType(type: any, id: any) {
     if ($('.recentfilter-but').hasClass('active')) {

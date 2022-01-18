@@ -1,18 +1,20 @@
 <!--  --><!-- internalheader-start -->
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">Latest Works</h2>
-        <p class="internal-headersecp">
-          We create innovative digital products that impact the way people
-          experience the world.
-        </p>
-        <app-askforqoute></app-askforqoute>
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 4" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+        
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
@@ -21,7 +23,7 @@
       <div class="col-md-12">
         <p class="servicedetails-p">
           <span>Innobox</span> brings years of experience and loads of passion
-          into developing each product to deliver business intelligence at the
+          into developing each product to deliverr business intelligence at the
           touch of a button! .
         </p>
       </div>

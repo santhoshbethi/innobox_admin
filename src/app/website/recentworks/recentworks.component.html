@@ -1,18 +1,19 @@
-<!--  --><!-- internalheader-start -->
-<section class="internal-headersec wow fadeInUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="internal-headersech2">Latest Works</h2>
-        <p class="internal-headersecp">
-          We create innovative digital products that impact the way people
-          experience the world.
-        </p>
-        <app-askforqoute></app-askforqoute>
+<ng-container *ngFor="let items of image; let i = index">
+  <section *ngIf="items.ID === 4" [style.background-image]="'url(' + appConfig.imageUrl+items.path + ')'" class="internal-headersec wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+         
+          <h2 class="internal-headersech2" [innerHTML]="items.title"></h2>
+          <p class="internal-headersecp" [innerHTML]="items.text">
+           
+          </p>
+          <app-askforqoute></app-askforqoute>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  </ng-container>
 <!-- internalheader-end -->
 <!-- service - details - start -->
 <section class="servicedetails-sec wow fadeInUp">
@@ -86,7 +87,7 @@
               <a
                 class="portfoliodetail-a"
                 routerLink="/{{
-                  appConfig.routes.recentworkcat + '/' + items.ID
+                  appConfig.routes.recentworkcat + '/' + items.title+ '/' + items.ID
                 }}"
               >
                 <div class="recentboxdiv">
